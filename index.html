@@ -265,6 +265,8 @@
   @media (max-width: 900px) { .books { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 480px) { .books { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
   .credit { margin-top: 14px; font-size: 12px; color: var(--muted); }
+  .book-quote { margin: 8px 0 0; font-family: var(--serif); font-size: 19px; line-height: 1.6; color: var(--brand); }
+  .book-quote::before { content: ""; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); margin-bottom: 10px; }
   .talks { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .talks h3 { font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--link); padding-top: 12px; border-top: 1px solid var(--line-strong); margin-bottom: 10px; }
   .talks ul { font-size: 15px; }
@@ -338,7 +340,7 @@
     <div>
       <span class="eyebrow">리더 스피치 컨설팅</span>
       <h1 id="hero-title">말이 신뢰가<br>되는 순간</h1>
-      <p class="sub">리더를 위한 스피치 컨설팅</p>
+      <p class="sub">기업 임원 · 고위공직자 · 기관장,<br>그리고 조직의 리더를 위한 <span style="white-space:nowrap">스피치 컨설팅</span></p>
       <p class="body"><q>지금 나의 말은 듣는 사람에게 신뢰로 닿고 있습니까?</q>좋은 말은 말하는 사람보다 듣는 사람을 먼저 생각합니다. 조직을 대표해 말하는 리더의 한마디를 함께 준비합니다.</p>
       <div class="cta">
         <a class="btn btn-primary" href="#contact">상담 문의하기</a>
@@ -375,10 +377,10 @@
     <div class="grid-4">
       <article class="card moment"><div class="n">1</div><h3>의도와 다르게 전해질 때</h3><p>좋은 뜻으로 한 말이 다르게 받아들여집니다. 해명이 본래의 말보다 길어집니다.</p></article>
       <article class="card moment"><div class="n">2</div><h3>기자의 질문 앞에서</h3><p>예상하지 못한 질문에 답이 길어집니다. 정작 전하려던 말은 흐려집니다.</p></article>
-      <article class="card moment"><div class="n">3</div><h3>설명했는데 공감을 얻지 못할 때</h3><p>논리는 충분합니다. 그런데 듣는 사람의 마음이 움직이지 않습니다.</p></article>
+      <article class="card moment"><div class="n">3</div><h3>설명했는데 공감을 얻지 못할 때</h3><p>논리는 충분합니다. 그런데 듣는 사람이 고개를 끄덕이지 않습니다.</p></article>
       <article class="card moment"><div class="n">4</div><h3>신중함이 모호함으로 보일 때</h3><p>조심스러운 표현을 되풀이하다 보면, 책임을 미루는 것처럼 보이기도 합니다.</p></article>
     </div>
-    <p class="closing-line">이럴 때 필요한 것은 화려한 말솜씨보다, 듣는 사람의 마음에 남는 한 문장입니다.</p>
+    <p class="closing-line">이럴 때 필요한 것은 화려한 말솜씨보다, 듣는 사람이 기억하는 한 문장입니다.</p>
   </div>
 </section>
 
@@ -434,7 +436,7 @@
     </p>
     <div class="grid-3">
       <article class="card value"><h3>명확성</h3><p>복잡한 현안도 한 문장씩 풀어 전합니다. 짧고 정확한 말이 오해를 줄입니다.</p></article>
-      <article class="card value"><h3>공감</h3><p>말하기 전에 듣는 사람의 마음을 먼저 헤아립니다. 그 사람의 언어로 말할 때 마음이 움직입니다.</p></article>
+      <article class="card value"><h3>공감</h3><p>말하기 전에 듣는 사람의 처지를 먼저 헤아립니다. 그 사람의 언어로 말할 때 비로소 공감이 생깁니다.</p></article>
       <article class="card value"><h3>대응력</h3><p>예상하지 못한 질문 앞에서도 한 박자 쉬고, 차분하게 답하는 힘을 기릅니다.</p></article>
     </div>
     <p class="closing-line">아무리 화려한 언변이라도 진심이 없으면 통하지 않습니다.<br>어눌하더라도 진정성을 태도에 담으면 상대는 그 마음을 알아봅니다.</p>
@@ -546,6 +548,7 @@
     <div class="sec-head">
       <span class="eyebrow">저서와 강의</span>
       <h2 id="books-title">말에 대해 쓰고, 말에 대해 가르칩니다</h2>
+      <blockquote class="book-quote">“말은 글처럼 간결하게 하고, 글은 말처럼 자연스럽게 쓰십시오.”</blockquote>
     </div>
     <ul class="books" aria-label="저서 목록">
       <li><div class="cv"><img src="data:image/webp;base64,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" alt="《말꽃》 표지" width="180" height="280" loading="eager"></div><span class="t">말꽃</span><span class="y">2026 · 달먹는토끼</span></li>
