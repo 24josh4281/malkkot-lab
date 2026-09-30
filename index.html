@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>김재원 말꽃연구소</title>
-<meta name="description" content="기업 임원 · 고위공직자 · 기관장, 조직의 리더와 실무자를 위한 스피치 컨설팅. 전 KBS 아나운서 김재원이 함께 준비합니다.">
+<title>김재원 말꽃연구소 · 리더 스피치 컨설팅</title>
+<meta name="description" content="기업 임원 · 고위공직자 · 기관장, 그리고 조직의 리더를 위한 스피치 컨설팅. 전 KBS 아나운서 김재원이 함께 준비합니다.">
+<link rel="canonical" href="https://24josh4281.github.io/malkkot-lab/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="김재원 말꽃연구소">
+<meta property="og:title" content="김재원 말꽃연구소 · 리더 스피치 컨설팅">
+<meta property="og:description" content="기업 임원 · 고위공직자 · 기관장, 그리고 조직의 리더를 위한 스피치 컨설팅.">
+<meta property="og:url" content="https://24josh4281.github.io/malkkot-lab/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
 <style>
@@ -306,6 +312,15 @@
   .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
   .consent input { margin-top: 5px; accent-color: var(--brand); }
   .form-msg { font-size: 14px; color: var(--brand); min-height: 1.5em; }
+  [hidden] { display: none !important; }
+  .consent-box { font-size: 13px; line-height: 1.7; color: var(--muted); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+  .consent-box .t { font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+  .consent-box ul { margin: 0 0 6px; padding-left: 18px; }
+  .consent-box a, .site-foot a { color: var(--link); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-closed { display: grid; gap: 14px; padding: 28px; align-content: start; }
+  .form-closed h3 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--brand); }
+  .form-closed .btns { display: flex; flex-wrap: wrap; gap: 10px; }
   @media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
 
   /* 바닥글 */
@@ -633,10 +648,26 @@
         </select>
       </div>
       <div class="field"><label for="f-msg">상황 설명 <span class="opt">(선택)</span></label><textarea id="f-msg" name="message" placeholder="어떤 자리를 준비하시는지 편하게 적어 주십시오."></textarea></div>
-      <label class="consent"><input type="checkbox" id="f-agree" required><span>상담을 위해 성함 · 소속 · 연락처를 수집하고, 상담이 끝나면 파기하는 데 동의합니다. (필수)</span></label>
+      <div class="consent-box" id="consentInfo">
+        <p class="t">개인정보 수집 · 이용 안내</p>
+        <ul>
+          <li>목적: 상담 신청 확인과 연락</li>
+          <li>항목: 성함, 소속 · 직함, 연락처 (선택: 희망 시기, 관심 과정, 상황 설명)</li>
+          <li>보유 기간: 상담이 끝난 뒤 30일 이내 파기, 상담이 진행되지 않은 신청은 접수일부터 6개월 이내 파기</li>
+          <li>동의하지 않으셔도 됩니다. 이 경우 온라인 신청 대신 전화로 상담을 신청하실 수 있습니다.</li>
+        </ul>
+        <p>신청 내용은 Google 스프레드시트에 저장되고 알림 메일로 전달됩니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주십시오.</p>
+      </div>
+      <label class="consent"><input type="checkbox" id="f-agree" name="agree" value="yes" required aria-describedby="consentInfo"><span>위 내용을 확인했으며 개인정보 수집 · 이용에 동의합니다. (필수)</span></label>
+      <div class="hp" aria-hidden="true"><label for="f-website">홈페이지</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="btn btn-primary" type="submit">상담 신청</button>
       <p class="form-msg" id="formMsg" role="status"></p>
     </form>
+    <div class="card form-closed" id="formClosed" hidden>
+      <h3>온라인 신청을 준비하고 있습니다</h3>
+      <p>곧 이곳에서 바로 신청하실 수 있습니다. 지금은 전화나 이메일로 연락해 주십시오.</p>
+      <div class="btns"><a class="btn btn-primary" href="tel:01091044281">전화하기</a><a class="btn btn-ghost" href="mailto:24josh@naver.com">메일 보내기</a></div>
+    </div>
   </div>
 </section>
 </main>
@@ -645,11 +676,11 @@
   <div class="wrap">
     <div>
       <p><span class="brand-name" style="font-family:var(--serif);color:var(--brand)">김재원 말꽃연구소</span></p>
-      <p>대표 김재원 · 문의 010-9104-4281 (섭외 담당)</p>
+      <p>대표 김재원 · 문의 010-9104-4281 (섭외 담당) · 24josh@naver.com</p>
     </div>
     <div>
       <p>© 2026 김재원 말꽃연구소</p>
-      <p>공개 전 시안입니다. 사업자 정보와 개인정보처리방침은 공개 전에 추가합니다.</p>
+      <p><a href="privacy.html">개인정보처리방침</a></p>
     </div>
   </div>
 </footer>
@@ -777,8 +808,13 @@
   });
   drawLadder(-1);
 
+  // 상담 신청 접수 주소 (Google Apps Script 웹 앱, …/exec). 비어 있으면 양식 대신 안내 카드를 보여 줍니다.
+  var ENDPOINT = '';
   var form = document.getElementById('contactForm');
   var msg = document.getElementById('formMsg');
+  var closed = document.getElementById('formClosed');
+  var openedAt = Date.now();
+  if (!ENDPOINT) { form.hidden = true; closed.hidden = false; }
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var missing = [];
@@ -787,7 +823,20 @@
     });
     if (missing.length) { msg.textContent = missing.join(', ') + '을(를) 입력해 주십시오.'; return; }
     if (!document.getElementById('f-agree').checked) { msg.textContent = '개인정보 수집 · 이용에 동의해 주십시오.'; return; }
-    msg.textContent = '시안에서는 신청 내용이 전송되지 않습니다. 010-9104-4281로 연락해 주십시오.';
+    var btn = form.querySelector('button[type="submit"]');
+    var fail = '전송하지 못했습니다. 010-9104-4281 또는 24josh@naver.com으로 연락해 주십시오.';
+    var data = new FormData(form);
+    data.append('elapsed', String(Math.round((Date.now() - openedAt) / 1000)));
+    btn.disabled = true; msg.textContent = '보내는 중입니다…';
+    fetch(ENDPOINT, { method: 'POST', body: data })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.ok) { form.reset(); openedAt = Date.now(); msg.textContent = '상담 신청이 접수되었습니다. 확인하는 대로 연락드리겠습니다.'; }
+        else if (j && j.error === 'tel') { msg.textContent = '연락처를 숫자로 다시 확인해 주십시오.'; }
+        else { msg.textContent = fail; }
+      })
+      .catch(function () { msg.textContent = fail; })
+      .then(function () { btn.disabled = false; });
   });
 })();
 </script>
