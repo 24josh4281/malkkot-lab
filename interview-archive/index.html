@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김재원 말꽃연구소 인터뷰 아카이브</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --paper:#faf7ef; --raised:#ffffff;
+    --wash-pink:#f7e3e1; --wash-mint:#e3efe8; --wash-lime:#e8f0d6; --wash-peach:#fbe6d4;
+    --line:#e6e0d3; --line-strong:#cfc6b4;
+    --ink:#262a33; --muted:#5e6573;
+    --brand:#2f4a8a; --link:#3f63a3; --on-brand:#faf7ef;
+    --coral:#ee8e74; --coral-text:#a2452b; --control:#857e71; --focus:#3f63a3;
+    --serif:"Noto Serif KR","Nanum Myeongjo","AppleMyungjo",serif;
+    --sans:"Noto Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#141c33; --raised:#1b2748;
+      --wash-pink:#34365a; --wash-mint:#24404f; --wash-lime:#2d4046; --wash-peach:#3e3a55;
+      --line:#2c3a5e; --line-strong:#3e4e76;
+      --ink:#f3efe6; --muted:#aeb6c6;
+      --brand:#9db4e6; --link:#b7c8ee; --on-brand:#141c33;
+      --coral:#f2a48c; --coral-text:#f2a48c; --control:#6a7aa3; --focus:#b7c8ee;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#141c33; --raised:#1b2748;
+    --wash-pink:#34365a; --wash-mint:#24404f; --wash-lime:#2d4046; --wash-peach:#3e3a55;
+    --line:#2c3a5e; --line-strong:#3e4e76;
+    --ink:#f3efe6; --muted:#aeb6c6;
+    --brand:#9db4e6; --link:#b7c8ee; --on-brand:#141c33;
+    --coral:#f2a48c; --coral-text:#f2a48c; --control:#6a7aa3; --focus:#b7c8ee;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.7; -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:anywhere; }
+  h1,h2,h3 { margin:0; font-family:var(--serif); font-weight:400; color:var(--brand); letter-spacing:-0.01em; text-wrap:balance; }
+  a { color:var(--link); }
+  button, input, select { font:inherit; color:inherit; }
+  :focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+
+  /* 상단 */
+  header.top { border-bottom:1px solid var(--line); background:var(--paper); position:sticky; top:0; z-index:20; }
+  .top .row { display:flex; align-items:center; gap:16px; padding:12px 0; flex-wrap:wrap; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand img { height:34px; display:block; }
+  .brand .logo-dark { display:none; }
+  :root[data-theme="dark"] .brand .logo-light { display:none; }
+  :root[data-theme="dark"] .brand .logo-dark { display:block; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .brand .logo-light { display:none; }
+    :root:not([data-theme="light"]) .brand .logo-dark { display:block; }
+  }
+  .brand .sub { font-family:var(--serif); color:var(--brand); font-size:18px; border-left:1px solid var(--line-strong); padding-left:12px; }
+  nav.tabs { display:flex; gap:4px; margin-left:auto; flex-wrap:wrap; }
+  nav.tabs button { background:none; border:0; border-bottom:2px solid transparent; padding:8px 12px; cursor:pointer; color:var(--muted); font-weight:500; }
+  nav.tabs button[aria-selected="true"] { color:var(--brand); border-bottom-color:var(--coral); }
+  .theme-btn { border:1px solid var(--line-strong); background:var(--raised); border-radius:4px; padding:6px 10px; cursor:pointer; font-size:13px; color:var(--muted); }
+  /* 좁은 화면: 메뉴를 한 줄로 두고 옆으로 밀어 보게 한다. 여러 줄로 쌓여 본문을 가리지 않도록 */
+  @media (max-width:760px){
+    .top .row { gap:8px 12px; padding:8px 0 0; }
+    .brand img { height:26px; } .brand .sub { font-size:15px; padding-left:10px; }
+    .theme-btn { margin-left:auto; padding:4px 8px; font-size:12px; }
+    nav.tabs { order:3; flex:0 0 100%; flex-wrap:nowrap; overflow-x:auto; margin-left:0; gap:0; -webkit-overflow-scrolling:touch; scrollbar-width:none; scroll-snap-type:x proximity; }
+    nav.tabs::-webkit-scrollbar { display:none; }
+    nav.tabs button { flex:0 0 auto; white-space:nowrap; padding:9px 11px; font-size:14px; scroll-snap-align:start; }
+  }
+
+  main { padding:28px 0 80px; min-height:70vh; }
+  .eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:500; letter-spacing:.08em; color:var(--link); }
+  .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--coral); }
+  .page-title { font-size:30px; line-height:1.3; margin:6px 0 4px; }
+  .lead { color:var(--muted); margin:0 0 22px; max-width:70ch; }
+  .note { font-size:13px; color:var(--muted); }
+
+  /* 카드·그리드 */
+  .card { background:var(--raised); border:1px solid var(--line); border-radius:8px; padding:18px 20px; }
+  .grid { display:grid; gap:16px; }
+  .g4 { grid-template-columns:repeat(4,1fr); } .g3 { grid-template-columns:repeat(3,1fr); } .g2 { grid-template-columns:repeat(2,1fr); }
+  @media (max-width:900px){ .g4{grid-template-columns:repeat(2,1fr);} .g3{grid-template-columns:1fr;} .g2{grid-template-columns:1fr;} }
+  .stat .num { font-family:var(--serif); font-size:34px; color:var(--brand); line-height:1.2; }
+  .stat .num small { font-family:var(--sans); font-size:14px; margin-left:3px; color:var(--muted); }
+  .stat .lab { font-size:13px; color:var(--muted); }
+  .wash-pink{background:var(--wash-pink);border-color:transparent;} .wash-mint{background:var(--wash-mint);border-color:transparent;}
+  .wash-lime{background:var(--wash-lime);border-color:transparent;} .wash-peach{background:var(--wash-peach);border-color:transparent;}
+  h2.sec { font-size:22px; margin:34px 0 12px; }
+  h3.sub { font-family:var(--sans); font-size:15px; font-weight:500; color:var(--ink); margin:0 0 10px; }
+
+  /* 막대 */
+  .bars { display:grid; gap:7px; }
+  .bar { display:grid; grid-template-columns:150px 1fr 70px; gap:10px; align-items:center; font-size:13px; }
+  .bar .track { background:var(--line); height:10px; border-radius:2px; overflow:hidden; }
+  .bar .fill { background:var(--brand); height:100%; }
+  .bar .fill.coral { background:var(--coral); }
+  .bar .v { text-align:right; color:var(--muted); font-variant-numeric:tabular-nums; }
+  @media (max-width:600px){ .bar{grid-template-columns:100px 1fr 56px;} }
+
+  /* 컨트롤 */
+  .controls { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; align-items:center; }
+  .controls input[type=search], .controls select { background:var(--raised); border:1px solid var(--line-strong); border-radius:4px; padding:9px 12px; }
+  .controls input[type=search] { flex:1 1 280px; min-width:200px; }
+  .chip { display:inline-block; border-radius:999px; padding:1px 10px; font-size:12px; background:var(--wash-peach); color:var(--ink); margin:2px 4px 2px 0; border:0; }
+  .chip.ch-책과삶{background:var(--wash-mint);} .chip.ch-김재원TV{background:var(--wash-pink);}
+  .chip.ch-CGN{background:var(--wash-lime);} .chip.ch-C채널{background:var(--wash-peach);}
+  .btn { background:var(--brand); color:var(--on-brand); border:0; border-radius:4px; padding:8px 14px; cursor:pointer; font-weight:500; }
+  .btn.ghost { background:var(--raised); color:var(--brand); border:1px solid var(--line-strong); }
+  mark { background:var(--wash-peach); color:inherit; padding:0 1px; border-radius:2px; }
+
+  /* 영상 목록 */
+  .list { display:grid; gap:10px; }
+  .item { display:block; width:100%; text-align:left; background:var(--raised); border:1px solid var(--line); border-radius:8px; padding:14px 16px; cursor:pointer; }
+  .item:hover { border-color:var(--link); }
+  .item .t { font-family:var(--serif); color:var(--brand); font-size:17px; line-height:1.45; }
+  .item .m { font-size:12.5px; color:var(--muted); margin-top:4px; }
+  .item .s { font-size:13.5px; margin-top:6px; color:var(--ink); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .pager { display:flex; gap:10px; align-items:center; margin-top:14px; justify-content:center; color:var(--muted); font-size:13px; }
+
+  /* 상세 */
+  .back { background:none; border:0; color:var(--link); cursor:pointer; padding:0; margin-bottom:12px; }
+  .detail h1 { font-size:26px; line-height:1.4; }
+  .kv { display:grid; grid-template-columns:130px 1fr; gap:6px 14px; font-size:14px; }
+  .kv dt { color:var(--muted); } .kv dd { margin:0; }
+  .kv dd.sum { font-size:15px; line-height:1.75; }
+  .sumlist { margin:0; padding-left:18px; } .sumlist li { margin:0 0 6px; }
+  @media (max-width:600px){ .detail h1 { font-size:21px; } .kv { font-size:14.5px; } }
+  @media (max-width:600px){ .kv{grid-template-columns:1fr;} .kv dt{margin-top:6px;} }
+  ul.clean { margin:0; padding-left:18px; } ul.clean li { margin:4px 0; }
+  .tabs2 { display:flex; gap:6px; flex-wrap:wrap; margin:22px 0 12px; border-bottom:1px solid var(--line); }
+  .tabs2 button { background:none; border:0; border-bottom:2px solid transparent; padding:8px 12px; cursor:pointer; color:var(--muted); }
+  .tabs2 button[aria-selected=true] { color:var(--brand); border-bottom-color:var(--coral); font-weight:500; }
+  .ex { border-left:3px solid var(--line-strong); padding:6px 0 6px 14px; margin:0 0 14px; }
+  .ex .head { font-size:12px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .ex .head a { font-variant-numeric:tabular-nums; }
+  .ex .q { font-family:var(--serif); font-size:16px; color:var(--brand); margin:4px 0; line-height:1.65; }
+  .ex .a { font-size:14px; color:var(--ink); }
+  .ex .a b { color:var(--muted); font-weight:500; }
+  .ex .ev { font-size:12.5px; color:var(--coral-text); margin-top:3px; }
+  .ex .nt { font-size:12.5px; color:var(--muted); margin-top:3px; }
+  .ex.moved { border-left-color:var(--coral); }
+  .tag { font-size:11.5px; border:1px solid var(--line-strong); border-radius:4px; padding:0 6px; color:var(--muted); }
+  .tag.hot { border-color:var(--coral); color:var(--coral-text); }
+  .quote { border-left:3px solid var(--coral); padding:2px 0 2px 14px; margin:10px 0; font-family:var(--serif); }
+  .quote small { display:block; font-family:var(--sans); color:var(--muted); font-size:12.5px; margin-top:3px; }
+  table.t { width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.t th, table.t td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.t th { color:var(--muted); font-weight:500; font-size:12.5px; }
+  table.t.num td:not(:first-child), table.t.num th:not(:first-child) { white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .scrollhint { display:none; }
+  @media (max-width:760px){
+    table.t { font-size:13px; }
+    table.t th, table.t td { padding:7px 8px; }
+    table.t.num td:first-child { min-width:170px; }
+    .scrollhint { display:block; font-size:12px; color:var(--muted); margin:0 0 6px; }
+    /* 글 표는 행마다 카드처럼 세로로 쌓는다 */
+    table.t.stack, table.t.stack tbody, table.t.stack tr, table.t.stack td { display:block; width:100%; box-sizing:border-box; }
+    table.t.stack tr:first-child { display:none; }
+    table.t.stack tr { border-bottom:1px solid var(--line); padding:8px 0; }
+    table.t.stack td { border:0; padding:2px 0; }
+    table.t.stack td:first-child { font-family:var(--serif); color:var(--brand); font-size:15px; }
+    #tabbody { min-height:80vh; } /* 짧은 탭도 탭 줄을 화면 위로 올릴 수 있게 */
+  }
+  .empty { color:var(--muted); padding:30px; text-align:center; }
+  footer { border-top:1px solid var(--line); padding:20px 0 40px; color:var(--muted); font-size:12.5px; }
+  .ripple { position:absolute; right:-40px; top:-30px; width:260px; opacity:.55; pointer-events:none; }
+  .hero { position:relative; overflow:hidden; border-radius:8px; background:var(--wash-pink); padding:26px 28px; margin-bottom:22px; }
+  .hero > *:not(.ripple) { position:relative; }
+  @media print { header.top, .controls, nav.tabs, .pager { display:none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap row">
+    <a class="brand" href="#/" aria-label="김재원 말꽃연구소 인터뷰 아카이브 홈">
+      <img class="logo-light" src="assets/malkkot-wordmark-inline-light.png" alt="김재원 말꽃연구소" onerror="this.style.display='none'">
+      <img class="logo-dark" src="assets/malkkot-wordmark-inline-dark.png" alt="" onerror="this.style.display='none'">
+      <span class="sub">인터뷰 아카이브</span>
+    </a>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <button class="theme-btn" id="themeBtn" aria-label="화면 색 바꾸기">화면 색</button>
+  </div>
+</header>
+<main><div class="wrap" id="app"></div></main>
+<footer><div class="wrap">
+  내부 학습용 자료입니다. 원자료는 유튜브 자동 자막이며 화자 구분·반응 판정·효과 점수는 AI 분석입니다. 인용은 영상 시각 링크로 원본을 확인하세요.
+  <span id="gen"></span>
+</div></footer>
+
+<script src="data/index.js"></script>
+<script src="data/stats.js"></script>
+<script>
+"use strict";
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const V = IDX.videos, G = IDX.guests;
+const app = $("#app");
+$("#gen").textContent = " · 데이터 갱신 " + IDX.generated;
+
+/* ── 테마 */
+const themeBtn = $("#themeBtn");
+try { const t = localStorage.getItem("mk-theme"); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+themeBtn.onclick = () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem("mk-theme", next); } catch(e) {}
+};
+
+/* ── 라벨 */
+const TYPE = {paraphrase:"되짚기",question:"새 질문",follow_up:"꼬리질문",self_disclosure:"자기 경험",empathy:"공감",summary:"요약",closing:"맺음",audience_proxy:"시청자 대신 묻기",humor:"유머",transition:"화제 전환",opening:"오프닝",compliment:"칭찬",challenge:"반론",guest_intro:"게스트 소개"};
+const FORM = {closed:"닫힌 질문",open:"열린 질문",leading:"유도 질문",choice:"택일",hypothetical:"가정",none:""};
+const REACT = {elaborated:"길게 답함",agreed_strongly:"강한 동의",neutral:"특별한 반응 없음",short_answer:"단답",corrected_host:"진행자를 바로잡음",laughed:"웃음",praised_host:"진행자를 칭찬",counter_question:"되물음",deflected:"답을 피함",moved:"감동"};
+const HOT = new Set(["moved","praised_host","counter_question","laughed"]);
+const HL = {guest_moved:"게스트가 감동·호응한 순간",guest_counter_question:"게스트가 되물은 순간",best_follow_up:"좋았던 꼬리질문",missed_follow_up:"놓친 꼬리질문"};
+const chClass = c => "ch-" + (c.startsWith("CGN") ? "CGN" : c.startsWith("C채널") ? "C채널" : c);
+const dfmt = d => d ? `${d.slice(0,4)}.${d.slice(4,6)}.${d.slice(6,8)}` : "";
+const tfmt = s => { s = +s || 0; const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = s%60; return (h?h+":":"") + String(m).padStart(h?2:1,"0") + ":" + String(x).padStart(2,"0"); };
+const dur = s => s ? Math.round(s/60) + "분" : "";
+const num = n => n == null ? "-" : n >= 100000000 ? (n/100000000).toFixed(1) + "억" : n >= 10000 ? (n/10000).toFixed(n >= 100000 ? 0 : 1) + "만" : n.toLocaleString();
+const rate = (l, v) => v ? (100 * l / v).toFixed(2) + "%" : "-";
+const dts = t => { if (!t) return ""; const d = new Date(t * 1000); return d.getFullYear() + "." + String(d.getMonth()+1).padStart(2,"0") + "." + String(d.getDate()).padStart(2,"0"); };
+const ROLE = {main:"중심 도서", guest_work:"게스트 저서", mentioned:"언급"};
+const link = (v, sec) => `${v.url || ("https://www.youtube.com/watch?v=" + v.id)}${sec ? "&t=" + sec + "s" : ""}`;
+const norm = s => String(s || "").toLowerCase().replace(/\s+/g, " ");
+function hi(text, terms) {
+  let h = esc(text);
+  for (const t of terms) { if (t.length < 1) continue; const re = new RegExp(esc(t).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"); h = h.replace(re, m => `<mark>${m}</mark>`); }
+  return h;
+}
+const terms = q => norm(q).split(" ").filter(Boolean);
+const matchAll = (hay, ts) => ts.every(t => hay.includes(t));
+const loadScript = src => new Promise((res, rej) => { const s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = () => rej(new Error(src)); document.head.appendChild(s); });
+const vcache = {};
+window.__v = (id, data) => { vcache[id] = data; };
+async function loadVideo(id) { if (!vcache[id]) await loadScript(`data/v/${id}.js`); return vcache[id]; }
+async function loadSig() { if (!window.SIG) await loadScript("data/sig.js"); return window.SIG; }
+async function loadData(name, key) { if (!window[key]) await loadScript(`data/${name}.js`); return window[key]; }
+async function loadEx() { if (!window.EX) await loadScript("data/ex.js"); return window.EX; }
+
+/* ── 탭 */
+const TABS = [["home","개요"],["videos","영상"],["guests","게스트"],["search","발화 검색"],["style","화법 지표"],["signal","잘한 순간"],["label","라벨링"],["report","리포트"],["testimony","간증"],["books","도서"],["monitor","모니터링"]];
+$("#tabs").innerHTML = TABS.map(([k,l]) => `<button role="tab" data-k="${k}">${l}</button>`).join("");
+$("#tabs").onclick = e => { const b = e.target.closest("button"); if (b) location.hash = "#/" + (b.dataset.k === "home" ? "" : b.dataset.k); };
+
+/* ── 라우팅 */
+let lastRoute = "";
+let state = { mmode:"l", vsort:"d", bq:"", bpage:0, mq:"", vq:"", vch:"", vdom:"", vhost:"1", vpage:0, gq:"", sq:"", stype:"", sreact:"", sch:"", spage:0, tq:"", tpage:0, sgl:"2", sgt:"", sga:"words", sgk:"", sgc:"", sgu:"1", sgq:"", sgp:0, rk:"" };
+async function route() {
+  const parts = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
+  const k = parts[0] || "home";
+  const sameVideo = k === "video" && lastRoute === "video/" + parts[1];
+  lastRoute = k === "video" ? "video/" + parts[1] : k;
+  for (const b of document.querySelectorAll("#tabs button")) { const on = b.dataset.k === (k === "video" ? "videos" : k === "guest" ? "guests" : k); b.setAttribute("aria-selected", String(on)); if (on && b.scrollIntoView) b.scrollIntoView({ block: "nearest", inline: "center" }); }
+  if (!sameVideo) window.scrollTo(0, 0);
+  if (k === "home") return viewHome();
+  if (k === "videos") return viewVideos();
+  if (k === "video") return viewVideo(parts[1], parts[2] || "ex", sameVideo);
+  if (k === "guests") return viewGuests();
+  if (k === "guest") return viewGuest(parts[1]);
+  if (k === "search") return viewSearch();
+  if (k === "style") return viewStyle();
+  if (k === "signal") return viewSignal();
+  if (k === "label") return viewLabel();
+  if (k === "report") return viewReport();
+  if (k === "testimony") return viewTestimony();
+  if (k === "books") return viewBooks();
+  if (k === "monitor") return viewMonitor();
+  viewHome();
+}
+addEventListener("hashchange", route);
+
+const bars = (rows, labelFn, max, cls = "") => {
+  const m = max || Math.max(1, ...rows.map(r => r.n));
+  return `<div class="bars">` + rows.map(r => `<div class="bar"><span>${esc(labelFn(r))}</span><span class="track"><span class="fill ${cls}" style="width:${(100*r.n/m).toFixed(1)}%;display:block"></span></span><span class="v">${r.n.toLocaleString()}</span></div>`).join("") + `</div>`;
+};
+
+/* ── 개요 */
+function viewHome() {
+  const S = STATS, T = S.totals;
+  const ch = {}; V.forEach(v => { ch[v.ch] = (ch[v.ch] || 0) + 1; });
+  const nTm = V.filter(v => v.tm).length;
+  app.innerHTML = `
+  <div class="hero wash-pink">
+    <svg class="ripple" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="var(--brand)" stroke-width="1" opacity=".5">${[18,34,52,72,94].map(r => `<circle cx="30" cy="100" r="${r}"/>`).join("")}</g><circle cx="30" cy="100" r="5" fill="var(--coral)"/></svg>
+    <span class="eyebrow">INTERVIEW ARCHIVE</span>
+    <h1 class="page-title">말이 오간 자리를 다시 꺼내 봅니다</h1>
+    <p class="lead" style="margin-bottom:14px">책과삶·김재원TV·하늘빛향기·광야예찬의 인터뷰를 게스트, 주제, 진행자의 말, 게스트의 반응으로 찾아볼 수 있습니다.</p>
+    <div class="controls" style="margin:0"><input type="search" id="hq" placeholder="게스트 이름, 주제, 질문 속 단어로 찾기 (예: 치매, 탁구, 퇴직)" aria-label="통합 검색"><button class="btn" id="hgo">영상 찾기</button><button class="btn ghost" id="hgo2">발화 찾기</button></div>
+  </div>
+  <div class="grid g4">
+    <div class="card stat wash-mint"><div class="num">${T.videos}<small>편</small></div><div class="lab">분석한 영상 (진행자 김재원 ${T.kjw}편)</div></div>
+    <div class="card stat"><div class="num">${T.guests}<small>명</small></div><div class="lab">게스트</div></div>
+    <div class="card stat"><div class="num">${T.exchanges.toLocaleString()}<small>건</small></div><div class="lab">진행자 발화 기록</div></div>
+    <div class="card stat wash-peach"><div class="num">${nTm}<small>편</small></div><div class="lab">간증 구조 기록</div></div>
+  </div>
+  <h2 class="sec">채널별 영상</h2>
+  <div class="card">${bars(Object.entries(ch).sort((a,b)=>b[1]-a[1]).map(([k,n]) => ({k,n})), r => r.k, 0)}</div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3 class="sub">주제 분야</h3>${bars(S.domains.slice(0,10), r => r.k || "미분류")}</div>
+    <div class="card"><h3 class="sub">게스트 반응</h3>${bars(S.reacts, r => REACT[r.k] || r.k, 0, "coral")}</div>
+  </div>
+  <h2 class="sec">최근 분석한 영상</h2>
+  <div class="list">${V.slice(0,6).map(videoItem).join("")}</div>
+  <p class="note" style="margin-top:18px">진행자가 김재원이 아닌 영상은 화법 지표에서 제외했고 영상 목록에서는 '진행자 확인' 필터로 구분합니다.</p>`;
+  const go = (tab, key) => () => { state[key] = $("#hq").value; state[key === "vq" ? "vpage" : "spage"] = 0; location.hash = "#/" + tab; };
+  $("#hgo").onclick = go("videos", "vq"); $("#hgo2").onclick = go("search", "sq");
+  $("#hq").onkeydown = e => { if (e.key === "Enter") go("videos", "vq")(); };
+  bindItems();
+}
+
+function videoItem(v) {
+  const g = v.g.slice(0,3).join(", ");
+  return `<button class="item" data-v="${v.id}"><div class="t">${esc(v.t)}</div>
+    <div class="m"><span class="chip ${chClass(v.ch)}">${esc(v.ch)}</span> ${dfmt(v.d)} · ${dur(v.dur)}${g ? " · " + esc(g) : ""}${v.dom ? " · " + esc(v.dom) : ""}${v.vw != null ? ` · 조회 ${num(v.vw)} · 좋아요 ${num(v.lk)}` : ""}${v.kjw ? "" : " · <span class='tag'>진행자 다름</span>"}${v.tm ? " · <span class='tag'>간증</span>" : ""}</div>
+    ${v.bk && v.bk.length ? `<div class="m">${v.bk.map(b => `<span class="chip">${b[1]==="main" ? "책 · " : ""}${esc(b[0])}</span>`).join("")}</div>` : ""}
+    <div class="s">${esc(v.top || v.sum)}</div></button>`;
+}
+function bindItems() { document.querySelectorAll(".item[data-v]").forEach(b => b.onclick = () => location.hash = "#/video/" + b.dataset.v); }
+
+/* ── 영상 목록 */
+function viewVideos() {
+  const chs = [...new Set(V.map(v => v.ch))], doms = [...new Set(V.map(v => v.dom).filter(Boolean))].sort();
+  app.innerHTML = `
+  <span class="eyebrow">VIDEOS</span><h1 class="page-title">영상 찾기</h1>
+  <p class="lead">제목·주제·요약·게스트·키워드에서 찾습니다. 공백으로 여러 단어를 쓰면 모두 포함한 영상만 보입니다.</p>
+  <div class="controls">
+    <input type="search" id="q" placeholder="예: 김경일 소통, 치매 예방, 책 제목" value="${esc(state.vq)}" aria-label="영상 검색">
+    <select id="ch" aria-label="채널"><option value="">모든 채널</option>${chs.map(c => `<option ${state.vch===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
+    <select id="dom" aria-label="분야"><option value="">모든 분야</option>${doms.map(c => `<option ${state.vdom===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
+    <select id="sort" aria-label="정렬"><option value="d" ${state.vsort==="d"?"selected":""}>최신순</option><option value="vw" ${state.vsort==="vw"?"selected":""}>조회수순</option><option value="lk" ${state.vsort==="lk"?"selected":""}>좋아요순</option><option value="cc" ${state.vsort==="cc"?"selected":""}>댓글순</option><option value="rt" ${state.vsort==="rt"?"selected":""}>좋아요 비율순</option></select>
+    <select id="host" aria-label="진행자"><option value="1" ${state.vhost==="1"?"selected":""}>진행자 김재원</option><option value="" ${state.vhost===""?"selected":""}>진행자 무관</option></select>
+  </div>
+  <div id="res"></div>`;
+  const run = () => {
+    state.vq = $("#q").value; state.vch = $("#ch").value; state.vdom = $("#dom").value; state.vhost = $("#host").value; state.vsort = $("#sort").value;
+    const ts = terms(state.vq);
+    const rows = V.filter(v => (!state.vch || v.ch === state.vch) && (!state.vdom || v.dom === state.vdom) && (!state.vhost || v.kjw) &&
+      (!ts.length || matchAll(norm([v.t, v.top, v.sum, v.g.join(" "), v.kw.join(" "), v.dom, (v.bk || []).map(b => b[0]).join(" ")].join(" ")), ts)));
+    const key = { d: v => v.d || "", vw: v => v.vw ?? -1, lk: v => v.lk ?? -1, cc: v => v.cc ?? -1, rt: v => (v.vw >= 3000 && v.lk) ? v.lk / v.vw : -1 }[state.vsort] || (v => v.d || "");
+    rows.sort((a, b) => key(b) > key(a) ? 1 : key(b) < key(a) ? -1 : 0);
+    const per = 20, pages = Math.max(1, Math.ceil(rows.length / per)); state.vpage = Math.min(state.vpage, pages - 1);
+    $("#res").innerHTML = `<p class="note">${rows.length}편</p>` + (rows.length ? `<div class="list">${rows.slice(state.vpage*per, (state.vpage+1)*per).map(videoItem).join("")}</div>
+      <div class="pager"><button class="btn ghost" id="pp" ${state.vpage?"":"disabled"}>이전</button>${state.vpage+1} / ${pages}<button class="btn ghost" id="pn" ${state.vpage<pages-1?"":"disabled"}>다음</button></div>` : `<div class="empty">조건에 맞는 영상이 없습니다.</div>`);
+    bindItems(); const pp = $("#pp"), pn = $("#pn");
+    if (pp) pp.onclick = () => { state.vpage--; run(); window.scrollTo(0,0); }; if (pn) pn.onclick = () => { state.vpage++; run(); window.scrollTo(0,0); };
+  };
+  ["q","ch","dom","host","sort"].forEach(id => $("#"+id).addEventListener(id === "q" ? "input" : "change", () => { state.vpage = 0; run(); }));
+  run();
+}
+
+/* ── 영상 상세 */
+async function viewVideo(id, tab, keepPos) {
+  const v = V.find(x => x.id === id);
+  if (!v) { app.innerHTML = `<div class="empty">영상을 찾을 수 없습니다.</div>`; return; }
+  const keepY = keepPos ? window.scrollY : null;
+  if (!keepPos) app.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  let d; try { d = await loadVideo(id); } catch (e) { app.innerHTML = `<div class="empty">상세 데이터를 불러오지 못했습니다. dashboard 폴더 전체를 그대로 열어야 합니다.</div>`; return; }
+  let sg = []; try { const SG = await loadSig(); const vi = V.findIndex(x => x.id === id); sg = SG.rows.filter(r => r[0] === vi); } catch (e) {}
+  const tabs = [["ex","발화와 반응"],["hl","주요 장면"],["pts","게스트 이야기"],["bg","배경지식"],["st","화법"],["cm",`댓글${v.cc ? " " + num(v.cc) : ""}`]];
+  if (d.tm) tabs.splice(2, 0, ["tm","간증 구조"]);
+  if (sg.length) tabs.splice(2, 0, ["sg", `잘한 순간 ${sg.length}`]);
+  if (!tabs.some(t => t[0] === tab)) tab = "ex";
+  const guests = d.g.map(g => `<a href="#/guest/${encodeURIComponent(g[0])}">${esc(g[0])}</a>${g[1] ? " (" + esc(g[1]) + ")" : ""}`).join(", ");
+  const exs = d.ex;
+  const body = {
+    ex: () => {
+      if (!exs.length) return `<div class="empty">진행자 발화 기록이 없습니다 (${v.kjw ? "기록 없음" : "진행자가 김재원이 아닌 영상"}).</div>`;
+      return `<div class="controls"><input type="search" id="eq" placeholder="이 영상 안에서 찾기" aria-label="영상 안에서 찾기"><select id="et" aria-label="발화 유형"><option value="">모든 유형</option>${Object.entries(TYPE).map(([k,l]) => `<option value="${k}">${l}</option>`).join("")}</select><select id="er" aria-label="게스트 반응"><option value="">모든 반응</option>${Object.entries(REACT).map(([k,l]) => `<option value="${k}">${l}</option>`).join("")}</select></div><div id="exl"></div>`;
+    },
+    sg: () => `<p class="note">게스트의 반응이 진행자의 말에 대한 인정·공감·확장으로 읽힌 장면입니다(AI 판정, 정확도 검증 전). 시각을 누르면 그 장면으로 갑니다.</p>` + sg.map(r => sigCard(r, v)).join(""),
+    hl: () => !d.hl.length ? `<div class="empty">기록된 장면이 없습니다.</div> ` : Object.keys(HL).map(k => {
+      const rows = d.hl.filter(h => h[0] === k); if (!rows.length) return "";
+      return `<h3 class="sub" style="margin-top:18px">${HL[k]}</h3>` + rows.map(h => `<div class="quote">${h[2] ? "진행자: " + esc(h[2]) : ""}${h[3] ? "<br>게스트: " + esc(h[3]) : ""}<small><a href="${link(v, ts2s(h[1]))}" target="_blank" rel="noopener">${esc(h[1])}</a> · ${esc(h[4])}</small></div>`).join("");
+    }).join(""),
+    tm: () => d.tm ? `<dl class="kv">${[["신앙 전의 삶",d.tm.life_before],["시련",d.tm.hardship],["전환점",d.tm.turning_point],["이후의 삶",d.tm.after_life],["핵심 메시지",d.tm.key_message],["진행자의 대응",d.tm.host_handling]].map(([a,b]) => `<dt>${a}</dt><dd>${esc(b || "—")}</dd>`).join("")}</dl>` +
+      (d.tm.items.filter(i => i[0] === "emotion_moment").length ? `<h3 class="sub" style="margin-top:18px">감정이 움직인 순간</h3>` + d.tm.items.filter(i => i[0] === "emotion_moment").map(i => `<div class="quote">게스트: ${esc(i[2])}<br>진행자: ${esc(i[3])}<small><a href="${link(v, ts2s(i[1]))}" target="_blank" rel="noopener">${esc(i[1] || "")}</a></small></div>`).join("") : "") +
+      (d.tm.items.filter(i => i[0] === "scripture").length ? `<h3 class="sub" style="margin-top:18px">언급된 구절·찬양·기도</h3><ul class="clean">${d.tm.items.filter(i => i[0] === "scripture").map(i => `<li>${esc(i[2])}</li>`).join("")}</ul>` : "") : "",
+    pts: () => `<h3 class="sub">게스트가 한 핵심 말</h3>${d.pts.key.length ? `<ul class="clean">${d.pts.key.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "—"}<h3 class="sub" style="margin-top:18px">개인사·근황 (다시 만났을 때 안부 소재)</h3>${d.pts.fact.length ? `<ul class="clean">${d.pts.fact.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "—"}`,
+    bg: () => d.bg.length ? `<table class="t stack"><tr><th style="width:26%">용어·인물·책</th><th>설명</th></tr>${d.bg.map(b => `<tr><td>${esc(b[0])}</td><td>${esc(b[1])}</td></tr>`).join("")}</table>` : `<div class="empty">기록된 배경지식이 없습니다.</div>`,
+    cm: () => {
+      if (!d.cm.length) return `<div class="empty">수집된 댓글이 없습니다.</div>`;
+      const one = c => `<div class="quote">${esc(c[0])}<small>좋아요 ${c[1].toLocaleString()} · 답글 ${c[6]}${c[7] ? "개 이상" : "개"}${c[2] ? " · " + dts(c[2]) : ""}${c[3] ? " · 고정" : ""}${c[4] ? " · 채널 하트" : ""}${c[5] ? " · 채널 운영자" : ""}</small></div>`;
+      return `<p class="note">${esc(v.sa)} 기준. 전체 댓글 ${(v.cc ?? 0).toLocaleString()}개 중 유튜브가 앞에 보여 주는 댓글 30개를 받아 그 안에서 뽑았습니다. 답글 수는 스레드당 20개까지만 세어, 20개를 넘으면 "20개 이상"입니다. 작성자 이름은 표시하지 않습니다.</p>
+        <h3 class="sub" style="margin-top:14px">좋아요 많은 댓글 ${d.cm.length}개</h3>${d.cm.map(one).join("")}
+        <h3 class="sub" style="margin-top:22px">답글 많은 댓글 ${d.cr.length}개</h3>${d.cr.length ? d.cr.map(one).join("") : `<div class="empty">답글이 달린 댓글이 없습니다.</div>`}`;
+    },
+    st: () => d.st ? `<dl class="kv"><dt>어투</dt><dd>${esc(d.st[0])}</dd><dt>오프닝</dt><dd>${esc(d.st[1])}</dd><dt>맺음</dt><dd>${esc(d.st[2])}</dd><dt>진행자 발화 비중</dt><dd>${esc(d.st[3])}</dd></dl>` +
+      [["strength","좋았던 점"],["improvement","보완할 점"],["signature_phrase","자주 쓴 표현"],["filler","군말·습관어"],["backchannel","맞장구"]].map(([k,l]) => (d.sti[k] || []).length ? `<h3 class="sub" style="margin-top:18px">${l}</h3><ul class="clean">${d.sti[k].map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "").join("")
+      + `<p class="note" style="margin-top:22px">진행자 확인: ${v.kjw ? "김재원" : "김재원이 아님"} (${esc(v.conf)}) ${esc(d.host_ev)}${d.issues ? `<br>자막 메모: ${esc(d.issues)}` : ""}</p>` : `<div class="empty">화법 기록이 없습니다.</div>`,
+  };
+  app.innerHTML = `<div class="detail"><button class="back" onclick="history.back()">← 돌아가기</button>
+    <span class="chip ${chClass(v.ch)}">${esc(v.ch)}</span> <span class="note">${dfmt(v.d)} · ${dur(v.dur)}${v.part ? " · " + esc(v.part) : ""}</span>
+    <h1>${esc(v.t)}</h1>
+    <div class="card" style="margin-top:14px"><dl class="kv"><dt>게스트</dt><dd>${guests || "—"}</dd><dt>주제</dt><dd>${esc(v.top)}${v.dom ? ` <span class="chip">${esc(v.dom)}</span>` : ""}</dd>
+    <dt>요약</dt><dd class="sum">${sentences(v.sum)}</dd>
+    ${d.pts.key.length ? `<dt>핵심 말</dt><dd class="sum"><ul class="sumlist">${d.pts.key.slice(0, 7).map(x => `<li>${esc(eum(x))}</li>`).join("")}</ul>${d.pts.key.length > 7 ? `<a href="#/video/${id}/pts" class="note">게스트 이야기 전체 보기 (${d.pts.key.length}개)</a>` : ""}</dd>` : ""}
+    <dt>이 영상에서</dt><dd><span class="chip">발화 ${exs.length}건</span>${d.hl.length ? `<span class="chip">주요 장면 ${d.hl.length}</span>` : ""}${sg.length ? `<span class="chip" style="background:var(--wash-mint)">잘한 순간 ${sg.length}</span>` : ""}${d.bg.length ? `<span class="chip">배경지식 ${d.bg.length}</span>` : ""}${d.tm ? `<span class="chip">간증 구조</span>` : ""}</dd>
+    <dt>키워드</dt><dd>${v.kw.map(k => `<span class="chip">${esc(k)}</span>`).join("")}</dd>
+    ${d.bk && d.bk.length ? `<dt>영상 속 책</dt><dd>${d.bk.map(b => `<span class="chip">${esc(b[0])}</span><span class="note">${esc(ROLE[b[2]] || "")}${b[1] ? " · " + esc(b[1]) : ""}</span> `).join("<br>")}</dd>` : ""}
+    ${v.vw != null ? `<dt>조회·반응</dt><dd>조회 ${v.vw.toLocaleString()} · 좋아요 ${(v.lk ?? 0).toLocaleString()} (${rate(v.lk, v.vw)}) · 댓글 ${(v.cc ?? 0).toLocaleString()} <span class="note">${esc(v.sa)} 기준${histNote(d.hist)}</span></dd>` : ""}
+    ${v.kjw ? "" : `<dt>진행자</dt><dd>김재원이 아님 <span class="note">${esc(d.host_ev)}</span></dd>`}</dl>
+    <p style="margin:12px 0 0"><a class="btn" href="${link(v)}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">영상 보기</a></p></div>
+    <div class="tabs2" role="tablist">${tabs.map(([k,l]) => `<button role="tab" aria-selected="${k===tab}" data-t="${k}">${l}</button>`).join("")}</div>
+    <div id="tabbody">${body[tab]()}</div></div>`;
+  document.querySelectorAll(".tabs2 button").forEach(b => b.onclick = () => location.hash = `#/video/${id}/${b.dataset.t}`);
+  if (keepY != null) { const t = $(".tabs2"); const top = t.getBoundingClientRect().top + window.scrollY - 52; window.scrollTo(0, Math.min(keepY, top)); }
+  if (tab === "ex" && exs.length) {
+    const draw = () => {
+      const ts = terms($("#eq").value), ty = $("#et").value, re = $("#er").value;
+      const rows = exs.filter(e => (!ty || e[2] === ty) && (!re || e[6] === re) && (!ts.length || matchAll(norm(e[4] + " " + e[5]), ts)));
+      $("#exl").innerHTML = `<p class="note">${rows.length} / ${exs.length}건</p>` + rows.map(e => `<div class="ex ${HOT.has(e[6]) ? "moved" : ""}"><div class="head"><a href="${link(v, e[1])}" target="_blank" rel="noopener">${tfmt(e[1])}</a><span class="tag">${TYPE[e[2]] || e[2]}</span>${e[3] && e[3] !== "none" ? `<span class="tag">${FORM[e[3]] || e[3]}</span>` : ""}${e[6] ? `<span class="tag ${HOT.has(e[6]) ? "hot" : ""}">${REACT[e[6]] || e[6]}</span>` : ""}<span>효과 ${e[8] ?? "-"}</span></div>
+        <div class="q">${hi(e[4], ts)}</div>${e[5] ? `<div class="a"><b>게스트</b> ${hi(e[5], ts)}</div>` : ""}${e[7] ? `<div class="ev">근거 · ${esc(e[7])}</div>` : ""}${e[9] ? `<div class="nt">메모 · ${esc(e[9])}</div>` : ""}</div>`).join("");
+    };
+    ["eq","et","er"].forEach(i => $("#"+i).addEventListener(i === "eq" ? "input" : "change", draw)); draw();
+  }
+}
+/* '-한다/-했다' 문장을 '-함/-했음' 개조식으로 바꾼다 (표시할 때만, 원문 데이터는 그대로) */
+const eum = t => {
+  const m = String(t || "").trim().match(/^([\s\S]*?)([가-힣])(는다|다)([.!?]?)(["”’)]*)$/);
+  if (!m) return t;
+  let [, head, last, end, punct, close] = m;
+  const code = last.charCodeAt(0) - 0xAC00, jong = code % 28, base = last.charCodeAt(0) - jong;
+  let out;
+  if (end === "는다") out = head + last + "음";                           // 먹는다 → 먹음
+  else if (jong === 0) out = head + String.fromCharCode(base + 16);        // 이다 → 임, 하다 → 함
+  else if (jong === 4) out = head + String.fromCharCode(base + 16);        // 한다 → 함, 본다 → 봄
+  else if (jong === 8) out = head + String.fromCharCode(base + 10);        // 길다 → 긺
+  else out = head + last + "음";                                           // 했다 → 했음, 있다 → 있음
+  return out + (punct || ".") + close;
+};
+const sentences = t => { const parts = String(t || "").split(/(?<=[다요음임]\.)\s+/).filter(Boolean); return parts.length > 1 ? `<ul class="sumlist">${parts.map(x => `<li>${esc(eum(x))}</li>`).join("")}</ul>` : esc(eum(t)); };
+function histNote(h) {
+  const days = [...new Set((h || []).map(x => x[0].slice(0,10)))];
+  if (days.length < 2) return " · 변화는 다음 갱신부터 표시";
+  const a = h.filter(x => x[0].startsWith(days[0])).pop(), b = h.filter(x => x[0].startsWith(days[days.length-1])).pop();
+  const dv = (b[1] ?? 0) - (a[1] ?? 0), dl = (b[2] ?? 0) - (a[2] ?? 0);
+  return ` · ${days[0].slice(5)} 이후 조회 ${dv >= 0 ? "+" : ""}${dv.toLocaleString()}, 좋아요 ${dl >= 0 ? "+" : ""}${dl.toLocaleString()}`;
+}
+const ts2s = ts => { const p = String(ts || "").match(/\d+/g); if (!p) return 0; return p.map(Number).slice(0,3).reduce((a,x) => a*60 + x, 0); };
+
+/* ── 게스트 */
+function viewGuests() {
+  app.innerHTML = `<span class="eyebrow">GUESTS</span><h1 class="page-title">게스트</h1>
+  <p class="lead">같은 게스트를 다시 만날 때 이전 대화·근황·통했던 말을 한눈에 봅니다. 출연 횟수가 많은 순입니다.</p>
+  <div class="controls"><input type="search" id="gq" placeholder="이름·직함·소속" value="${esc(state.gq)}" aria-label="게스트 검색"></div><div id="gl"></div>`;
+  const draw = () => {
+    state.gq = $("#gq").value; const ts = terms(state.gq);
+    const rows = G.filter(g => !ts.length || matchAll(norm(g.n + " " + g.role + " " + g.aff), ts));
+    $("#gl").innerHTML = `<p class="note">${rows.length}명</p><div class="list">${rows.slice(0, 80).map(g => `<button class="item" data-g="${esc(g.n)}"><div class="t">${esc(g.n)} <span class="chip">${g.v.length}편</span></div><div class="m">${esc([g.role, g.aff].filter(Boolean).join(" · "))}</div><div class="m">${g.v.slice(0,2).map(i => esc(V[i].t.slice(0,50))).join(" / ")}</div></button>`).join("")}</div>${rows.length > 80 ? `<p class="note">상위 80명만 표시합니다. 이름으로 좁혀 보세요.</p>` : ""}`;
+    document.querySelectorAll(".item[data-g]").forEach(b => b.onclick = () => location.hash = "#/guest/" + encodeURIComponent(b.dataset.g));
+  };
+  $("#gq").oninput = draw; draw();
+}
+async function viewGuest(name) {
+  const g = G.find(x => x.n === name);
+  if (!g) { app.innerHTML = `<div class="empty">게스트를 찾을 수 없습니다.</div>`; return; }
+  app.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  const vs = g.v.map(i => V[i]).sort((a,b) => (a.d||"").localeCompare(b.d||""));
+  const ds = await Promise.all(vs.map(v => loadVideo(v.id).catch(() => null)));
+  const sect = (title, rows) => rows.length ? `<h2 class="sec">${title}</h2>${rows.join("")}` : "";
+  const moved = [], missed = [], pts = [], facts = [];
+  vs.forEach((v, i) => { const d = ds[i]; if (!d) return;
+    d.hl.filter(h => h[0] === "guest_moved" || h[0] === "best_follow_up").slice(0,3).forEach(h => moved.push(`<div class="quote">진행자: ${esc(h[2])}${h[3] ? "<br>게스트: " + esc(h[3]) : ""}<small>${esc(v.t.slice(0,40))} · <a href="${link(v, ts2s(h[1]))}" target="_blank" rel="noopener">${esc(h[1])}</a> · ${esc(h[4])}</small></div>`));
+    d.hl.filter(h => h[0] === "missed_follow_up").slice(0,3).forEach(h => missed.push(`<div class="quote">게스트: ${esc(h[3])}<br>다시 묻는다면: ${esc(h[4])}<small>${esc(v.t.slice(0,40))} · <a href="${link(v, ts2s(h[1]))}" target="_blank" rel="noopener">${esc(h[1])}</a></small></div>`));
+    d.pts.key.slice(0,6).forEach(x => pts.push(`<li>${esc(x)} <span class="note">· ${dfmt(v.d)}</span></li>`));
+    d.pts.fact.slice(0,6).forEach(x => facts.push(`<li>${esc(x)} <span class="note">· ${dfmt(v.d)}</span></li>`));
+  });
+  app.innerHTML = `<button class="back" onclick="history.back()">← 돌아가기</button>
+  <span class="eyebrow">GUEST BRIEF</span><h1 class="page-title">${esc(g.n)}</h1>
+  <p class="lead">${esc([g.role, g.aff].filter(Boolean).join(" · "))} · 분석된 인터뷰 ${vs.length}편</p>
+  <h2 class="sec" style="margin-top:6px">지난 만남</h2>
+  <div class="list">${vs.map(videoItem).join("")}</div>
+  ${pts.length ? `<h2 class="sec">게스트가 했던 핵심 말</h2><ul class="clean">${pts.join("")}</ul>` : ""}
+  ${facts.length ? `<h2 class="sec">안부 소재 (개인사·근황)</h2><ul class="clean">${facts.join("")}</ul>` : ""}
+  ${sect("그때 잘 통한 말", moved)}
+  ${sect("그때 놓친 질문 (이번에 물어볼 만한 것)", missed)}`;
+  bindItems();
+}
+
+/* ── 발화 검색 */
+async function viewSearch() {
+  app.innerHTML = `<span class="eyebrow">UTTERANCES</span><h1 class="page-title">발화 검색</h1>
+  <p class="lead">진행자가 한 말(자막 기준 교정본)을 모든 영상에서 찾고, 게스트가 어떻게 반응했는지 함께 봅니다. 시각을 누르면 그 장면의 영상으로 이동합니다.</p>
+  <div class="controls"><input type="search" id="sq" placeholder="예: 그때 어떻게 되셨어요, 어머니, 불안" value="${esc(state.sq)}" aria-label="발화 검색">
+  <select id="st" aria-label="발화 유형"><option value="">모든 유형</option>${Object.entries(TYPE).map(([k,l]) => `<option value="${k}" ${state.stype===k?"selected":""}>${l}</option>`).join("")}</select>
+  <select id="sr" aria-label="게스트 반응"><option value="">모든 반응</option>${Object.entries(REACT).map(([k,l]) => `<option value="${k}" ${state.sreact===k?"selected":""}>${l}</option>`).join("")}</select>
+  <select id="sc" aria-label="채널"><option value="">모든 채널</option>${[...new Set(V.map(v => v.ch))].map(c => `<option ${state.sch===c?"selected":""}>${esc(c)}</option>`).join("")}</select></div><div id="sres"><div class="empty">발화 색인을 불러오는 중…</div></div>`;
+  let EX; try { EX = await loadEx(); } catch (e) { $("#sres").innerHTML = `<div class="empty">발화 색인을 불러오지 못했습니다. dashboard 폴더 전체를 그대로 열어야 합니다.</div>`; return; }
+  const run = () => {
+    state.sq = $("#sq").value; state.stype = $("#st").value; state.sreact = $("#sr").value; state.sch = $("#sc").value;
+    const ts = terms(state.sq); const out = [];
+    for (const e of EX) {
+      if (state.stype && e[2] !== state.stype) continue; if (state.sreact && e[3] !== state.sreact) continue;
+      if (state.sch && V[e[0]].ch !== state.sch) continue;
+      if (ts.length && !matchAll(norm(e[4]), ts)) continue; out.push(e);
+    }
+    const per = 25, pages = Math.max(1, Math.ceil(out.length / per)); state.spage = Math.min(state.spage, pages - 1);
+    $("#sres").innerHTML = `<p class="note">${out.length.toLocaleString()}건${!ts.length && !state.stype && !state.sreact && !state.sch ? " (전체)" : ""}</p>` +
+      out.slice(state.spage*per, (state.spage+1)*per).map(e => { const v = V[e[0]]; return `<div class="ex ${HOT.has(e[3]) ? "moved" : ""}"><div class="head"><a href="${link(v, e[1])}" target="_blank" rel="noopener">${tfmt(e[1])}</a><span class="tag">${TYPE[e[2]] || e[2]}</span>${e[7] && e[7] !== "none" ? `<span class="tag">${FORM[e[7]] || ""}</span>` : ""}${e[3] ? `<span class="tag ${HOT.has(e[3]) ? "hot" : ""}">${REACT[e[3]] || e[3]}</span>` : ""}<a href="#/video/${v.id}" style="color:var(--muted)">${esc(v.t.slice(0, 46))} · ${esc(v.g.slice(0,2).join(", "))}</a></div>
+        <div class="q">${hi(e[4], ts)}</div>${e[5] ? `<div class="a"><b>게스트</b> ${esc(e[5])}</div>` : ""}</div>`; }).join("") +
+      (out.length ? `<div class="pager"><button class="btn ghost" id="sp" ${state.spage?"":"disabled"}>이전</button>${state.spage+1} / ${pages}<button class="btn ghost" id="sn" ${state.spage<pages-1?"":"disabled"}>다음</button></div>` : `<div class="empty">조건에 맞는 발화가 없습니다.</div>`);
+    const sp = $("#sp"), sn = $("#sn"); if (sp) sp.onclick = () => { state.spage--; run(); window.scrollTo(0,0); }; if (sn) sn.onclick = () => { state.spage++; run(); window.scrollTo(0,0); };
+  };
+  ["sq","st","sr","sc"].forEach(id => $("#"+id).addEventListener(id === "sq" ? "input" : "change", () => { state.spage = 0; run(); })); run();
+}
+
+/* ── 화법 지표 */
+function viewStyle() {
+  const S = STATS; const sumN = a => a.reduce((x, r) => x + r.n, 0);
+  const nEx = sumN(S.types), nQ = sumN(S.forms);
+  const pct = (a, b) => b ? (100*a/b).toFixed(1) + "%" : "-";
+  app.innerHTML = `<span class="eyebrow">SPEECH METRICS</span><h1 class="page-title">화법 지표</h1>
+  <p class="lead">진행자가 김재원으로 확인된 ${S.totals.kjw}편, 진행자 발화 ${nEx.toLocaleString()}건 기준입니다. 효과 점수(1~5)는 분석자(AI)의 판단이라 절대값보다 유형별 차이를 보세요.</p>
+  <div class="grid g2">
+    <div class="card"><h3 class="sub">발화 유형</h3>${bars(S.types, r => `${TYPE[r.k] || r.k}  ·  효과 ${r.eff}`)}</div>
+    <div class="card"><h3 class="sub">질문 형태</h3>${bars(S.forms, r => `${FORM[r.k] || r.k}  ·  효과 ${r.eff}`, 0, "coral")}<p class="note" style="margin:12px 0 0">질문 ${nQ.toLocaleString()}건 중 닫힌 질문 ${pct((S.forms.find(f => f.k==="closed")||{n:0}).n, nQ)}, 열린 질문 ${pct((S.forms.find(f => f.k==="open")||{n:0}).n, nQ)}</p></div>
+  </div>
+  <h2 class="sec">채널별 비교</h2>
+  <div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span><table class="t num"><tr><th>채널</th><th>편수</th><th>편당 발화</th><th>꼬리질문 비율</th><th>닫힌 질문</th><th>열린 질문</th><th>평균 효과</th></tr>
+  ${S.channels.map(c => `<tr><td>${esc(c.k)}</td><td>${c.vids}</td><td>${(c.n/c.vids).toFixed(1)}</td><td>${pct(c.fu, c.qu)}</td><td>${pct(c.cl, c.qf)}</td><td>${pct(c.op, c.qf)}</td><td>${c.eff}</td></tr>`).join("")}</table>
+  <p class="note" style="margin:10px 0 0">하늘빛향기·광야예찬은 공동 진행이 있고 게스트의 긴 독백이 많아 일반 인터뷰와 직접 비교하지 마세요.</p></div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3 class="sub">게스트 반응</h3>${bars(S.reacts, r => REACT[r.k] || r.k, 0, "coral")}<p class="note" style="margin:12px 0 0">감동 판정이 적은 것은 자막에 말로 드러난 경우만 세기 때문입니다.</p></div>
+    <div class="card"><h3 class="sub">보완 후보 (${S.improve.n ? "편별 개선 서술 기준" : ""})</h3>${bars(S.improve.themes.map(t => ({k:t.k, n:t.n})), r => r.k, 0, "coral")}<p class="note" style="margin:12px 0 0">키워드로 센 근사치이며 모수는 개선점이 기록된 ${S.improve.themes[0]?.of ?? 0}편입니다.</p></div>
+  </div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3 class="sub">자주 나온 군말·습관어 (편 수)</h3>${bars(S.fillers, r => r.k)}</div>
+    <div class="card"><h3 class="sub">고정 멘트 (편 수)</h3>${S.phrases.length ? bars(S.phrases, r => r.k.slice(0, 22)) : "—"}</div>
+  </div>`;
+}
+
+/* ── 간증 */
+function viewTestimony() {
+  const rows0 = V.filter(v => v.tm);
+  app.innerHTML = `<span class="eyebrow">TESTIMONY</span><h1 class="page-title">간증 프로그램</h1>
+  <p class="lead">하늘빛향기·광야예찬의 간증 영상 ${rows0.length}편입니다. 영상을 열면 신앙 전의 삶, 시련, 전환점, 이후의 삶, 진행자가 고백을 받은 방식을 볼 수 있습니다. 공동 진행자가 있는 회차가 많아 화자 구분이 불확실할 수 있습니다.</p>
+  <div class="controls"><input type="search" id="tq" placeholder="게스트·주제·키워드 (예: 중독, 가족, 선교)" value="${esc(state.tq)}" aria-label="간증 검색"></div><div id="tl"></div>`;
+  const draw = () => { state.tq = $("#tq").value; const ts = terms(state.tq);
+    const rows = rows0.filter(v => !ts.length || matchAll(norm([v.t, v.top, v.sum, v.g.join(" "), v.kw.join(" ")].join(" ")), ts));
+    $("#tl").innerHTML = `<p class="note">${rows.length}편</p><div class="list">${rows.map(videoItem).join("")}</div>`; bindItems(); };
+  $("#tq").oninput = draw; draw();
+}
+/* ── 도서 */
+function viewBooks() {
+  const B = STATS.mon.books;
+  app.innerHTML = `<span class="eyebrow">BOOKS</span><h1 class="page-title">영상 속 책</h1>
+  <p class="lead">인터뷰에서 중심이 된 책, 게스트의 저서, 대화 중 언급된 책입니다. 책 ${B.length}권. 제목·저자로 찾고, 누르면 그 책이 나온 영상을 봅니다. 책 정보는 이미 분석한 단서(게스트 소개, 영상 설명, 대화 속 『』 표기)에서 뽑았고, 입력에 없는 책은 넣지 않았습니다.</p>
+  <div class="controls"><input type="search" id="bq" placeholder="책 제목 또는 저자" value="${esc(state.bq)}" aria-label="책 검색"></div><div id="bl"></div>`;
+  const draw = () => {
+    state.bq = $("#bq").value; const ts = terms(state.bq);
+    const rows = B.filter(b => !ts.length || matchAll(norm(b.t + " " + b.a), ts));
+    $("#bl").innerHTML = `<p class="note">${rows.length}권${rows.length > 120 ? " (상위 120권 표시)" : ""}</p><div class="list">` + rows.slice(0, 120).map((b, i) => `<div class="card" style="padding:14px 16px"><div class="t" style="font-family:var(--serif);color:var(--brand);font-size:17px">${esc(b.t)} ${b.main ? `<span class="chip" style="background:var(--wash-mint)">중심 도서 ${b.main}편</span>` : ""} <span class="chip">${b.n}편</span></div>
+      <div class="m note">${b.a ? esc(b.a) + " · " : ""}나온 영상의 조회수 합 ${num(b.views)}</div>
+      <div style="margin-top:6px">${b.v.map(i => `<a href="#/video/${V[i].id}" style="display:block;font-size:13.5px">${esc(V[i].t.slice(0, 70))} <span class="note">${dfmt(V[i].d)}${V[i].vw != null ? " · 조회 " + num(V[i].vw) : ""}</span></a>`).join("")}${b.n > b.v.length ? `<span class="note">외 ${b.n - b.v.length}편</span>` : ""}</div></div>`).join("") + `</div>`;
+  };
+  $("#bq").oninput = draw; draw();
+}
+
+/* ── 잘한 순간 (이해받음 신호) */
+const SIGT = {accuracy:"정확성 인정", emotion:"마음을 알아줌", gratitude:"감사", praise:"칭찬", expand:"확장"};
+const SIGO = ["emotion","accuracy","gratitude","praise","expand"]; /* 목록 정렬: 판정이 확실한 것 먼저, 이해받음에 가까운 종류 먼저 */
+const SIGA = {words:"진행자의 말", question:"질문", manner:"진행 방식", other:"기타"};
+const TECH = {reflect:"되짚기", summarize:"요약·정리", name_emotion:"감정 명명", metaphor:"비유", share_self:"자기 경험 공유", specific_question:"구체적 질문", open_question:"열린 질문", viewer_proxy:"시청자 대신 묻기", affirm:"인정·감사·칭찬", other:"기타"};
+function sigCard(r, v) {
+  v = v || V[r[0]];
+  return `<div class="ex ${r[2] >= 3 ? "moved" : ""}"><div class="head"><a href="${link(v, r[1])}" target="_blank" rel="noopener">${tfmt(r[1])}</a><span class="tag ${r[2] >= 3 ? "hot" : ""}">${SIGT[r[3]] || r[3]} · level ${r[2]}</span>${r[4] ? `<span class="tag">${SIGA[r[4]] || r[4]}</span>` : ""}${r[6] ? `<span class="tag">${TECH[r[6]] || r[6]}${r[7] ? " · 표현 인용" : ""}</span>` : ""}${r[5] ? `<span class="tag">판정 애매</span>` : ""}${r[8] ? `<span class="tag">공동 진행</span>` : ""}<a href="#/video/${v.id}" style="color:var(--muted)">${esc(v.t.slice(0, 46))} · ${esc(v.g.slice(0, 2).join(", "))}</a></div>
+    <div class="q">${esc(r[9])}</div><div class="a"><b>게스트</b> ${esc(r[10])}</div>${r[11] ? `<div class="ev">근거 · ${esc(r[11])}</div>` : ""}</div>`;
+}
+async function viewSignal() {
+  app.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  let SG; try { SG = await loadSig(); } catch (e) { app.innerHTML = `<div class="empty">데이터를 불러오지 못했습니다. dashboard 폴더 전체를 그대로 열어야 합니다.</div>`; return; }
+  const m = SG.sum, G = m.gold, pc = x => x == null ? "-" : x + "%";
+  const mainCh = m.channels.filter(c => !c.co_host);
+  app.innerHTML = `<span class="eyebrow">UNDERSTOOD SIGNALS</span><h1 class="page-title">게스트가 이해받았다고 말한 순간</h1>
+  <p class="lead">진행자 멘트 뒤에 게스트가 "정확합니다", "제 마음을 알아주시네요"처럼 이해받은 반응을 말로 드러낸 장면입니다. 자막에 말로 나온 것만 세고, 판정은 AI가 했습니다. ${G.n ? `사용자 라벨 ${G.n}건과 비교한 일치율은 ${Math.round(G.rate*100)}%입니다.` : `<b>아직 사람이 확인하지 않은 값(정확도 검증 전)</b>이라 개별 장면은 영상에서 직접 확인하세요.`}</p>
+  <div class="grid g4">
+    <div class="card stat wash-mint"><div class="num">${m.core}<small>건</small></div><div class="lab">핵심 신호 (진행자의 말에 대한 반응)</div></div>
+    <div class="card stat"><div class="num">${(100*m.core/m.exchanges).toFixed(2)}</div><div class="lab">발화 100건당 핵심 신호</div></div>
+    <div class="card stat"><div class="num">${m.core_sure}<small>건</small></div><div class="lab">그중 판정이 확실한 것</div></div>
+    <div class="card stat wash-peach"><div class="num">${m.levels["3"] || 0}<small>건</small></div><div class="lab">마음을 알아줬다는 직접 표현 (level 3)</div></div>
+  </div>
+  <p class="note" style="margin-top:10px">후보 규칙이 찾지 못한 신호가 있습니다. 무작위 ${m.miss.checked}건 점검에서 ${m.miss.found}건이 더 나와, 후보 밖에 약 ${m.miss.est_total}건(${m.miss.range[0]}~${m.miss.range[1]})이 있을 수 있고 후보 규칙은 전체의 약 ${Math.round(100*m.miss.recall_est)}%를 잡았다고 추정합니다. 총량은 대략으로만 보세요.</p>
+  <h2 class="sec">어떤 멘트 뒤에 나왔나</h2>
+  <div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span><table class="t num"><tr><th>멘트 기법</th><th>무작위 기준선(건)</th><th>핵심 신호(건)</th><th>기준선 대비</th><th>추정 성공률</th></tr>
+  ${m.techniques.map(t => `<tr ${t.thin ? 'style="opacity:.55"' : ""}><td>${esc(t.name)}</td><td>${t.base}</td><td>${t.core}</td><td>${t.lift ?? "-"}배</td><td>${pc(t.rate)}${t.thin ? ' <span class="note">표본 부족</span>' : ""}</td></tr>`).join("")}</table>
+  <p class="note" style="margin:10px 0 0">기준선 ${m.base_n}건은 진행자 발화 전체에서 무작위로 고른 표본입니다. 질문은 답변이 돌아오는 구조라 이해받음 표현이 나오기 어려워 성공률이 낮게 나옵니다. 질문의 성과는 '화법 지표'의 꼬리질문으로 보세요. 게스트 표현을 그대로 인용한 멘트는 기준선 ${m.quote.base_yes_pct}%, 신호 장면 ${m.quote.sig_yes_pct}%입니다.</p></div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3 class="sub">채널별 발화 100건당 핵심 신호</h3>${bars(mainCh.map(c => ({k:c.channel, n:c.per100})), r => r.k, 0, "coral")}<p class="note" style="margin:10px 0 0">하늘빛향기는 공동 진행이라 제외했습니다.</p></div>
+    <div class="card"><h3 class="sub">월별 (발화 300건 이상인 달)</h3>${bars(m.months.filter(x => x.exchanges >= 300).map(x => ({k:x.ym.slice(0,4) + "." + x.ym.slice(4), n:x.per100})), r => r.k)}</div>
+  </div>
+  <h2 class="sec">장면 찾기</h2>
+  <div class="controls"><input type="search" id="sgq" placeholder="진행자 멘트·게스트 말에서 찾기" value="${esc(state.sgq)}" aria-label="장면 검색">
+  <select id="sgl" aria-label="강도"><option value="2" ${state.sgl==="2"?"selected":""}>level 2 이상</option><option value="3" ${state.sgl==="3"?"selected":""}>level 3 이상 (마음을 알아줌·확장)</option><option value="4" ${state.sgl==="4"?"selected":""}>level 4 (확장)만</option></select>
+  <select id="sgt" aria-label="신호 종류"><option value="">모든 종류</option>${Object.entries(SIGT).map(([k,l]) => `<option value="${k}" ${state.sgt===k?"selected":""}>${l}</option>`).join("")}</select>
+  <select id="sga" aria-label="반응 대상"><option value="words" ${state.sga==="words"?"selected":""}>진행자의 말에 대한 반응</option><option value="" ${state.sga===""?"selected":""}>모든 대상 (질문·진행 방식 칭찬 포함)</option></select>
+  <select id="sgk" aria-label="멘트 기법"><option value="">모든 기법</option>${Object.entries(TECH).map(([k,l]) => `<option value="${k}" ${state.sgk===k?"selected":""}>${l}</option>`).join("")}</select>
+  <select id="sgc" aria-label="채널"><option value="">모든 채널</option>${[...new Set(V.map(v => v.ch))].map(c => `<option ${state.sgc===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
+  <select id="sgu" aria-label="판정"><option value="1" ${state.sgu==="1"?"selected":""}>판정 애매한 것 포함</option><option value="0" ${state.sgu==="0"?"selected":""}>확실한 것만</option></select></div><div id="sgres"></div>
+  <p class="note" style="margin-top:18px">한계: 어조·표정·침묵은 자막에 없어 말로 드러난 것만 셉니다. 판정은 AI이고 단순 맞장구(level 1)는 제외했습니다. 월별·기법별 수치는 표본이 작아 흔들립니다.</p>`;
+  const run = () => {
+    state.sgq = $("#sgq").value; state.sgl = $("#sgl").value; state.sgt = $("#sgt").value; state.sga = $("#sga").value; state.sgk = $("#sgk").value; state.sgc = $("#sgc").value; state.sgu = $("#sgu").value;
+    const ts = terms(state.sgq), lv = +state.sgl;
+    const out = SG.rows.filter(r => r[2] >= lv && (!state.sgt || r[3] === state.sgt) && (!state.sga || r[4] === state.sga) && (!state.sgk || r[6] === state.sgk) &&
+      (!state.sgc || V[r[0]].ch === state.sgc) && (state.sgu === "1" || !r[5]) && (!ts.length || matchAll(norm(r[9] + " " + r[10]), ts)))
+      .sort((a, b) => a[5] - b[5] || SIGO.indexOf(a[3]) - SIGO.indexOf(b[3]) || (V[b[0]].d || "").localeCompare(V[a[0]].d || "") || a[1] - b[1]);
+    const per = 20, pages = Math.max(1, Math.ceil(out.length / per)); state.sgp = Math.min(state.sgp, pages - 1);
+    $("#sgres").innerHTML = `<p class="note">${out.length}건</p>` + out.slice(state.sgp*per, (state.sgp+1)*per).map(r => sigCard(r)).join("") +
+      (out.length ? `<div class="pager"><button class="btn ghost" id="gp" ${state.sgp?"":"disabled"}>이전</button>${state.sgp+1} / ${pages}<button class="btn ghost" id="gn" ${state.sgp<pages-1?"":"disabled"}>다음</button></div>` : `<div class="empty">조건에 맞는 장면이 없습니다.</div>`);
+    const gp = $("#gp"), gn = $("#gn"); if (gp) gp.onclick = () => { state.sgp--; run(); window.scrollTo(0,0); }; if (gn) gn.onclick = () => { state.sgp++; run(); window.scrollTo(0,0); };
+  };
+  ["sgq","sgl","sgt","sga","sgk","sgc","sgu"].forEach(id => $("#"+id).addEventListener(id === "sgq" ? "input" : "change", () => { state.sgp = 0; run(); })); run();
+}
+
+/* ── 리포트 */
+async function viewReport() {
+  app.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  let R; try { R = await loadData("reports", "RPT"); } catch (e) { app.innerHTML = `<div class="empty">리포트를 불러오지 못했습니다.</div>`; return; }
+  const cur = R.find(x => x.k === state.rk) || R[0]; state.rk = cur.k;
+  app.innerHTML = `<span class="eyebrow">REPORTS</span><h1 class="page-title">리포트</h1>
+  <div class="controls">${R.map(x => `<button class="btn ${x.k === cur.k ? "" : "ghost"}" data-k="${x.k}">${esc(x.t)}</button>`).join("")}</div>
+  <div class="card report">${cur.h.replace(/<div style="overflow-x:auto">/g, '<div class="tw">')}</div>`;
+  document.querySelectorAll(".controls button[data-k]").forEach(b => b.onclick = () => { state.rk = b.dataset.k; viewReport(); });
+}
+
+/* ── 라벨링 (이해받음 신호 정확도 검증) */
+async function viewLabel() {
+  app.innerHTML = `<div class="empty">불러오는 중…</div>`;
+  let L; try { L = await loadData("label", "LBL"); } catch (e) { app.innerHTML = `<div class="empty">라벨링 표를 불러오지 못했습니다.</div>`; return; }
+  const KEY = "signal_labels_v1"; let S = {};
+  try { S = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  app.innerHTML = `<span class="eyebrow">LABELING</span><h1 class="page-title">이해받음 신호 라벨링 (${L.length}건)</h1>
+  <p class="lead">각 장면에서 게스트의 반응이 <b>진행자가 한 말이 정확했거나, 자기 마음을 알아줬다고 느낀 표현</b>이면 O, 진행자 말을 받아 속마음이나 새 이야기를 꺼낸 경우도 O입니다. 단순 맞장구·사실 답변·정정·일반 인사는 X, 판단이 어려우면 모르겠다를 누릅니다. AI 판정은 보여 드리지 않습니다. 누른 값은 이 기기의 브라우저에 저장됩니다.</p>
+  <div class="controls" style="position:sticky;top:0;z-index:2"><span id="lcnt" class="note" style="align-self:center"></span><button class="btn" id="lcopy">결과 복사</button></div>
+  ${L.map((it, n) => `<div class="ex" data-id="${esc(it.id)}"><div class="head"><span>${n + 1} / ${L.length}</span><a href="${esc(it.link)}" target="_blank" rel="noopener">〈${esc(it.title.slice(0, 40))}〉 ${tfmt(it.t)}</a></div>
+    <div class="q"><b>진행자</b> ${esc(it.u)}</div><div class="a"><b>게스트(요약)</b> ${esc(it.g)}</div><div class="a"><b>게스트가 한 말</b> ${esc(it.e)}</div>
+    <div class="controls" style="margin:10px 0 0">${[["O","O 이해받았다는 반응"],["X","X 아니다"],["?","모르겠다"]].map(([v, l]) => `<button class="btn ghost lb" data-v="${v}">${l}</button>`).join("")}</div></div>`).join("")}
+  <textarea id="lout" readonly style="width:100%;height:110px;margin-top:14px;font:12px monospace" placeholder="'결과 복사'를 누르면 JSON이 나옵니다. 대화창에 붙여 넣어 주세요."></textarea>`;
+  const paint = () => { let n = 0; document.querySelectorAll(".ex[data-id]").forEach(c => { const v = S[c.dataset.id]; if (v) n++; c.querySelectorAll(".lb").forEach(b => b.classList.toggle("ghost", b.dataset.v !== v)); }); $("#lcnt").textContent = n + " / " + L.length; };
+  document.querySelectorAll(".ex[data-id]").forEach(c => c.addEventListener("click", e => { const b = e.target.closest(".lb"); if (!b) return; S[c.dataset.id] = b.dataset.v; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (x) {} paint(); }));
+  $("#lcopy").onclick = () => { const d = new Date().toISOString().slice(0, 10); const t = JSON.stringify(Object.keys(S).filter(k => S[k] === "O" || S[k] === "X").map(k => ({id: k, label: S[k], labeled_at: d}))); const o = $("#lout"); o.value = t; o.select(); try { navigator.clipboard.writeText(t); } catch (e) {} };
+  paint();
+}
+
+/* ── 모니터링 */
+function viewMonitor() {
+  const M = STATS.mon;
+  const vlist = (idxs, extra) => `<table class="t num"><tr><th>영상</th><th>채널</th><th>조회</th><th>좋아요</th><th>비율</th><th>댓글</th>${extra ? `<th>${extra[0]}</th>` : ""}</tr>` + idxs.map(it => { const i = Array.isArray(it) ? it[0] : it, v = V[i]; return `<tr><td><a href="#/video/${v.id}">${esc(v.t.slice(0, 54))}</a><br><span class="note">${esc(v.g.slice(0, 2).join(", "))} · ${dfmt(v.d)}</span></td><td>${esc(v.ch)}</td><td>${num(v.vw)}</td><td>${num(v.lk)}</td><td>${rate(v.lk, v.vw)}</td><td>${num(v.cc)}</td>${extra ? `<td>${extra[1](it)}</td>` : ""}</tr>`; }).join("") + `</table>`;
+  const diffRows = M.gain.length ? vlist(M.gain, ["기간 증가", g => `조회 +${g[1].toLocaleString()}<br><span class="note">좋아요 ${g[2] >= 0 ? "+" : ""}${g[2].toLocaleString()} (${g[3].slice(5)}~${g[4].slice(5)})</span>`]) : "";
+  app.innerHTML = `<span class="eyebrow">MONITORING</span><h1 class="page-title">조회·반응 모니터링</h1>
+  <p class="lead">영상별 조회수, 좋아요, 댓글 수와 좋아요가 많은 댓글을 모아 봅니다. 마지막 수집 ${esc(M.stats_at)} · 댓글 ${M.n_comments.toLocaleString()}개(영상당 상위 30개) · 수집한 날 ${M.snap_days.length}일(${esc(M.snap_days.join(", "))}).</p>
+  <h2 class="sec" style="margin-top:6px">채널별</h2>
+  <div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span><table class="t num"><tr><th>채널</th><th>영상</th><th>조회 합계</th><th>평균</th><th>중앙값</th><th>좋아요 합계</th><th>좋아요 비율</th><th>댓글 합계</th></tr>
+  ${M.channels.map(c => `<tr><td>${esc(c.k)}</td><td>${c.n}</td><td>${num(c.views)}</td><td>${num(c.avg)}</td><td>${num(c.med)}</td><td>${num(c.likes)}</td><td>${c.rate}%</td><td>${num(c.cc)}</td></tr>`).join("")}</table>
+  <p class="note" style="margin:10px 0 0">조회수는 올라온 지 오래된 영상이 유리합니다. 채널끼리의 평균 비교는 올라온 시기와 구독자 규모가 달라 참고용입니다.</p></div>
+  <h2 class="sec">${M.gain.length ? "기간 중 조회가 많이 늘어난 영상" : "변화 추적"}</h2>
+  ${M.gain.length ? `<div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span>${diffRows}</div>` : `<div class="card"><p style="margin:0">지금은 ${esc(M.snap_days.join(", "))} 하루치만 있어 증가분을 계산할 수 없습니다. 수집을 다른 날 한 번 더 하면(<code>07_collect_stats.py</code>) 이 자리에 기간 중 증가 상위 영상이 표시됩니다.</p></div>`}
+  <h2 class="sec">조회수 상위 30</h2><div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span>${vlist(M.top_views)}</div>
+  <h2 class="sec">좋아요 비율 상위 30 <span class="note">(조회 5천 이상)</span></h2><div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span>${vlist(M.top_rate)}</div>
+  <h2 class="sec">댓글이 많은 영상 30</h2><div class="card tw"><span class="scrollhint">표가 넓으면 옆으로 밀어 보세요</span>${vlist(M.top_cc)}</div>
+  <h2 class="sec">주요 댓글</h2>
+  <p class="note">영상마다 앞쪽 댓글 30개 가운데서 모은 것이라 전체 댓글 순위는 아닙니다. 작성자 이름은 표시하지 않습니다.</p>
+  <div class="controls"><select id="mmode" aria-label="정렬"><option value="l" ${state.mmode!=="r"?"selected":""}>좋아요 많은 순 (상위 ${M.comments.length})</option><option value="r" ${state.mmode==="r"?"selected":""}>답글 많은 순 (상위 ${M.comments_r.length})</option></select><input type="search" id="mq" placeholder="댓글 안에서 찾기" value="${esc(state.mq)}" aria-label="댓글 검색"></div><div id="ml"></div>`;
+  const draw = () => {
+    state.mq = $("#mq").value; state.mmode = $("#mmode").value; const ts = terms(state.mq);
+    const rows = (state.mmode === "r" ? M.comments_r : M.comments).filter(c => !ts.length || matchAll(norm(c[1]), ts));
+    $("#ml").innerHTML = `<p class="note">${rows.length}개</p>` + rows.map(c => { const v = V[c[0]]; return `<div class="quote">${hi(c[1], ts)}<small>좋아요 ${c[2].toLocaleString()} · 답글 ${c[7]}${c[8] ? "개 이상" : "개"}${c[3] ? " · " + dts(c[3]) : ""}${c[4] ? " · 고정" : ""}${c[5] ? " · 채널 하트" : ""} · <a href="#/video/${v.id}/cm">${esc(v.t.slice(0, 40))}</a></small></div>`; }).join("");
+  };
+  $("#mq").oninput = draw; $("#mmode").onchange = draw; draw();
+}
+route();
+</script>
+<script>/* 본문 스크립트가 data/stats.js 보다 먼저 실행되지 않도록 위 순서를 유지한다 */</script>
+</body>
+</html>
