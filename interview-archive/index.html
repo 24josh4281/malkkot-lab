@@ -317,7 +317,7 @@ function viewHome() {
 function videoItem(v) {
   const g = v.g.slice(0,3).join(", ");
   return `<button class="item" data-v="${v.id}"><div class="t">${esc(v.t)}</div>
-    <div class="m"><span class="chip ${chClass(v.ch)}">${esc(v.ch)}</span> ${dfmt(v.d)} · ${dur(v.dur)}${g ? " · " + esc(g) : ""}${v.dom ? " · " + esc(v.dom) : ""}${v.vw != null ? ` · 조회 ${num(v.vw)} · 좋아요 ${num(v.lk)}` : ""}${v.kjw ? "" : " · <span class='tag'>진행자 다름</span>"}${v.tm ? " · <span class='tag'>간증</span>" : ""}</div>
+    <div class="m"><span class="chip ${chClass(v.ch)}">${esc(v.ch)}</span> ${dfmt(v.d)} · ${dur(v.dur)}${g ? " · " + esc(g) : ""}${v.dom ? " · " + esc(v.dom) : ""}${v.vw != null ? ` · 조회 ${num(v.vw)} · 좋아요 ${num(v.lk)}` : ""}${v.kjw ? "" : " · <span class='tag'>진행자 다름</span>"}${v.tm ? " · <span class='tag'>간증</span>" : ""}${v.sg ? ` · 이해받음 ${v.sg}` : ""}</div>
     ${v.bk && v.bk.length ? `<div class="m">${v.bk.map(b => `<span class="chip">${b[1]==="main" ? "책 · " : ""}${esc(b[0])}</span>`).join("")}</div>` : ""}
     <div class="s">${esc(v.top || v.sum)}</div></button>`;
 }
@@ -333,7 +333,7 @@ function viewVideos() {
     <input type="search" id="q" placeholder="예: 김경일 소통, 치매 예방, 책 제목" value="${esc(state.vq)}" aria-label="영상 검색">
     <select id="ch" aria-label="채널"><option value="">모든 채널</option>${chs.map(c => `<option ${state.vch===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
     <select id="dom" aria-label="분야"><option value="">모든 분야</option>${doms.map(c => `<option ${state.vdom===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
-    <select id="sort" aria-label="정렬"><option value="d" ${state.vsort==="d"?"selected":""}>최신순</option><option value="vw" ${state.vsort==="vw"?"selected":""}>조회수순</option><option value="lk" ${state.vsort==="lk"?"selected":""}>좋아요순</option><option value="cc" ${state.vsort==="cc"?"selected":""}>댓글순</option><option value="rt" ${state.vsort==="rt"?"selected":""}>좋아요 비율순</option></select>
+    <select id="sort" aria-label="정렬"><option value="d" ${state.vsort==="d"?"selected":""}>최신순</option><option value="vw" ${state.vsort==="vw"?"selected":""}>조회수순</option><option value="lk" ${state.vsort==="lk"?"selected":""}>좋아요순</option><option value="cc" ${state.vsort==="cc"?"selected":""}>댓글순</option><option value="rt" ${state.vsort==="rt"?"selected":""}>좋아요 비율순</option><option value="sg" ${state.vsort==="sg"?"selected":""}>이해받음 신호순 (발화 100건당)</option></select>
     <select id="host" aria-label="진행자"><option value="1" ${state.vhost==="1"?"selected":""}>진행자 김재원</option><option value="" ${state.vhost===""?"selected":""}>진행자 무관</option></select>
   </div>
   <div id="res"></div>`;
@@ -342,7 +342,7 @@ function viewVideos() {
     const ts = terms(state.vq);
     const rows = V.filter(v => (!state.vch || v.ch === state.vch) && (!state.vdom || v.dom === state.vdom) && (!state.vhost || v.kjw) &&
       (!ts.length || matchAll(norm([v.t, v.top, v.sum, v.g.join(" "), v.kw.join(" "), v.dom, (v.bk || []).map(b => b[0]).join(" ")].join(" ")), ts)));
-    const key = { d: v => v.d || "", vw: v => v.vw ?? -1, lk: v => v.lk ?? -1, cc: v => v.cc ?? -1, rt: v => (v.vw >= 3000 && v.lk) ? v.lk / v.vw : -1 }[state.vsort] || (v => v.d || "");
+    const key = { d: v => v.d || "", vw: v => v.vw ?? -1, lk: v => v.lk ?? -1, cc: v => v.cc ?? -1, rt: v => (v.vw >= 3000 && v.lk) ? v.lk / v.vw : -1, sg: v => v.n >= 15 ? (v.sgr || 0) : -1 }[state.vsort] || (v => v.d || "");
     rows.sort((a, b) => key(b) > key(a) ? 1 : key(b) < key(a) ? -1 : 0);
     const per = 20, pages = Math.max(1, Math.ceil(rows.length / per)); state.vpage = Math.min(state.vpage, pages - 1);
     $("#res").innerHTML = `<p class="note">${rows.length}편</p>` + (rows.length ? `<div class="list">${rows.slice(state.vpage*per, (state.vpage+1)*per).map(videoItem).join("")}</div>
@@ -578,7 +578,7 @@ async function viewSignal() {
   const m = SG.sum, G = m.gold, pc = x => x == null ? "-" : x + "%";
   const mainCh = m.channels.filter(c => !c.co_host);
   app.innerHTML = `<span class="eyebrow">UNDERSTOOD SIGNALS</span><h1 class="page-title">게스트가 이해받았다고 말한 순간</h1>
-  <p class="lead">진행자 멘트 뒤에 게스트가 "정확합니다", "제 마음을 알아주시네요"처럼 이해받은 반응을 말로 드러낸 장면입니다. 자막에 말로 나온 것만 세고, 판정은 AI가 했습니다. ${G.n ? `사용자 라벨 ${G.n}건과 비교한 일치율은 ${Math.round(G.rate*100)}%입니다.` : `<b>아직 사람이 확인하지 않은 값(정확도 검증 전)</b>이라 개별 장면은 영상에서 직접 확인하세요.`}</p>
+  <p class="lead">진행자 멘트 뒤에 게스트가 "정확합니다", "제 마음을 알아주시네요"처럼 이해받은 반응을 말로 드러낸 장면입니다. 자막에 말로 나온 것만 세고, 판정은 AI가 했습니다. ${G.n ? `사용자 라벨 ${G.n}건과 비교한 일치율은 ${Math.round(G.rate*100)}%입니다.` : `<b>아직 사람이 확인하지 않은 값(정확도 검증 전)</b>이라 개별 장면은 영상에서 직접 확인하세요.`}${m.cross && m.cross.n ? ` 같은 ${m.cross.n}건을 다른 문구의 지침으로 다시 분류했을 때 ${Math.round(m.cross.rate*100)}%가 같은 판정이었습니다(판정의 흔들림 척도이며 정답 일치율은 아닙니다).` : ""}</p>
   <div class="grid g4">
     <div class="card stat wash-mint"><div class="num">${m.core}<small>건</small></div><div class="lab">핵심 신호 (진행자의 말에 대한 반응)</div></div>
     <div class="card stat"><div class="num">${(100*m.core/m.exchanges).toFixed(2)}</div><div class="lab">발화 100건당 핵심 신호</div></div>
@@ -594,6 +594,9 @@ async function viewSignal() {
     <div class="card"><h3 class="sub">채널별 발화 100건당 핵심 신호</h3>${bars(mainCh.map(c => ({k:c.channel, n:c.per100})), r => r.k, 0, "coral")}<p class="note" style="margin:10px 0 0">하늘빛향기는 공동 진행이라 제외했습니다.</p></div>
     <div class="card"><h3 class="sub">월별 (발화 300건 이상인 달)</h3>${bars(m.months.filter(x => x.exchanges >= 300).map(x => ({k:x.ym.slice(0,4) + "." + x.ym.slice(4), n:x.per100})), r => r.k)}</div>
   </div>
+  <h2 class="sec">신호가 많이 나온 영상 <span class="note">(발화 100건당, 발화 15건 이상·공동 진행 제외)</span></h2>
+  <div class="card tw"><table class="t num"><tr><th>영상</th><th>발화</th><th>핵심 신호</th><th>100건당</th></tr>
+  ${V.filter(v => v.kjw && v.n >= 15 && v.sg && !v.ch.startsWith("CGN")).sort((a, b) => b.sgr - a.sgr).slice(0, 12).map(v => `<tr><td><a href="#/video/${v.id}/sg">${esc(v.t.slice(0, 54))}</a><br><span class="note">${esc(v.g.slice(0, 2).join(", "))} · ${dfmt(v.d)}</span></td><td>${v.n}</td><td>${v.sg}</td><td>${v.sgr}</td></tr>`).join("")}</table></div>
   <h2 class="sec">장면 찾기</h2>
   <div class="controls"><input type="search" id="sgq" placeholder="진행자 멘트·게스트 말에서 찾기" value="${esc(state.sgq)}" aria-label="장면 검색">
   <select id="sgl" aria-label="강도"><option value="2" ${state.sgl==="2"?"selected":""}>level 2 이상</option><option value="3" ${state.sgl==="3"?"selected":""}>level 3 이상 (마음을 알아줌·확장)</option><option value="4" ${state.sgl==="4"?"selected":""}>level 4 (확장)만</option></select>
