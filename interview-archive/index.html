@@ -108,6 +108,7 @@
   .chip { display:inline-block; border-radius:999px; padding:1px 10px; font-size:12px; background:var(--wash-peach); color:var(--ink); margin:2px 4px 2px 0; border:0; }
   .chip.ch-책과삶{background:var(--wash-mint);} .chip.ch-김재원TV{background:var(--wash-pink);}
   .chip.ch-CGN{background:var(--wash-lime);} .chip.ch-C채널{background:var(--wash-peach);}
+  .chip.ch-마당밖김재원{background:color-mix(in srgb, var(--wash-mint) 55%, var(--wash-pink));}
   .btn { background:var(--brand); color:var(--on-brand); border:0; border-radius:4px; padding:8px 14px; cursor:pointer; font-weight:500; }
   .btn.ghost { background:var(--raised); color:var(--brand); border:1px solid var(--line-strong); }
   mark { background:var(--wash-peach); color:inherit; padding:0 1px; border-radius:2px; }
@@ -290,7 +291,7 @@ function viewHome() {
     <svg class="ripple" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="var(--brand)" stroke-width="1" opacity=".5">${[18,34,52,72,94].map(r => `<circle cx="30" cy="100" r="${r}"/>`).join("")}</g><circle cx="30" cy="100" r="5" fill="var(--coral)"/></svg>
     <span class="eyebrow">INTERVIEW ARCHIVE</span>
     <h1 class="page-title">말이 오간 자리를 다시 꺼내 봅니다</h1>
-    <p class="lead" style="margin-bottom:14px">책과삶·김재원TV·하늘빛향기·광야예찬의 인터뷰를 게스트, 주제, 진행자의 말, 게스트의 반응으로 찾아볼 수 있습니다.</p>
+    <p class="lead" style="margin-bottom:14px">책과삶·김재원TV·마당밖김재원·하늘빛향기·광야예찬의 인터뷰를 게스트, 주제, 진행자의 말, 게스트의 반응으로 찾아볼 수 있습니다.</p>
     <div class="controls" style="margin:0"><input type="search" id="hq" placeholder="게스트 이름, 주제, 질문 속 단어로 찾기 (예: 치매, 탁구, 퇴직)" aria-label="통합 검색"><button class="btn" id="hgo">영상 찾기</button><button class="btn ghost" id="hgo2">발화 찾기</button></div>
   </div>
   <div class="grid g4">
