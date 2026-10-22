@@ -199,7 +199,7 @@
 "use strict";
 const $ = (s, r=document) => r.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const V = IDX.videos, G = IDX.guests;
+const V = IDX.videos, G = IDX.guests, P = IDX.pending || [];
 const app = $("#app");
 $("#gen").textContent = " · 데이터 갱신 " + IDX.generated;
 
@@ -330,6 +330,7 @@ function viewVideos() {
   app.innerHTML = `
   <span class="eyebrow">VIDEOS</span><h1 class="page-title">영상 찾기</h1>
   <p class="lead">제목·주제·요약·게스트·키워드에서 찾습니다. 공백으로 여러 단어를 쓰면 모두 포함한 영상만 보입니다.</p>
+  ${P.length ? `<section class="card" style="margin-bottom:20px"><h2>최근 발견 · 분석 대기 ${P.length}편</h2><p class="note">채널 목록과 게시일만 확인한 영상입니다. 화자·내용 분석은 아직 검증되지 않았습니다.</p><div class="list">${P.map(v => `<a class="item" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.id)}" target="_blank" rel="noopener"><div class="t">${esc(v.t)}</div><div class="m">${esc(v.ch)} · ${dfmt(v.d)} · ${v.sub ? "자막 확보" : "자막 없음"}</div></a>`).join("")}</div></section>` : ""}
   <div class="controls">
     <input type="search" id="q" placeholder="예: 김경일 소통, 치매 예방, 책 제목" value="${esc(state.vq)}" aria-label="영상 검색">
     <select id="ch" aria-label="채널"><option value="">모든 채널</option>${chs.map(c => `<option ${state.vch===c?"selected":""}>${esc(c)}</option>`).join("")}</select>
